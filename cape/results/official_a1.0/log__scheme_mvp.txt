@@ -1,0 +1,43 @@
+2026/11/16 23:48:51 mvp_r050_a1.0_c15_L10_N2047_official round 1000/40000 elapsed 1s
+2026/11/16 23:48:52 mvp_r050_a1.0_c15_L10_N2047_official round 2000/40000 elapsed 2s
+2026/11/16 23:48:54 mvp_r050_a1.0_c15_L10_N2047_official round 3000/40000 elapsed 3s
+2026/11/16 23:48:55 mvp_r050_a1.0_c15_L10_N2047_official round 4000/40000 elapsed 5s
+2026/11/16 23:48:56 mvp_r050_a1.0_c15_L10_N2047_official round 5000/40000 elapsed 6s
+2026/11/16 23:48:57 mvp_r050_a1.0_c15_L10_N2047_official round 6000/40000 elapsed 7s
+2026/11/16 23:48:59 mvp_r050_a1.0_c15_L10_N2047_official round 7000/40000 elapsed 8s
+2026/11/16 23:49:00 mvp_r050_a1.0_c15_L10_N2047_official round 8000/40000 elapsed 10s
+2026/11/16 23:49:01 mvp_r050_a1.0_c15_L10_N2047_official round 9000/40000 elapsed 11s
+2026/11/16 23:49:02 mvp_r050_a1.0_c15_L10_N2047_official round 10000/40000 elapsed 12s
+2026/11/16 23:49:04 mvp_r050_a1.0_c15_L10_N2047_official round 11000/40000 elapsed 14s
+2026/11/16 23:49:05 mvp_r050_a1.0_c15_L10_N2047_official round 12000/40000 elapsed 15s
+2026/11/16 23:49:06 mvp_r050_a1.0_c15_L10_N2047_official round 13000/40000 elapsed 16s
+2026/11/16 23:49:08 mvp_r050_a1.0_c15_L10_N2047_official round 14000/40000 elapsed 18s
+2026/11/16 23:49:09 mvp_r050_a1.0_c15_L10_N2047_official round 15000/40000 elapsed 19s
+2026/11/16 23:49:10 mvp_r050_a1.0_c15_L10_N2047_official round 16000/40000 elapsed 20s
+2026/11/16 23:49:11 mvp_r050_a1.0_c15_L10_N2047_official round 17000/40000 elapsed 21s
+2026/11/16 23:49:13 mvp_r050_a1.0_c15_L10_N2047_official round 18000/40000 elapsed 23s
+2026/11/16 23:49:14 mvp_r050_a1.0_c15_L10_N2047_official round 19000/40000 elapsed 24s
+2026/11/16 23:49:15 mvp_r050_a1.0_c15_L10_N2047_official round 20000/40000 elapsed 25s
+2026/11/16 23:49:17 mvp_r050_a1.0_c15_L10_N2047_official round 21000/40000 elapsed 27s
+2026/11/16 23:49:18 mvp_r050_a1.0_c15_L10_N2047_official round 22000/40000 elapsed 28s
+2026/11/16 23:49:19 mvp_r050_a1.0_c15_L10_N2047_official round 23000/40000 elapsed 29s
+2026/11/16 23:49:20 mvp_r050_a1.0_c15_L10_N2047_official round 24000/40000 elapsed 30s
+2026/11/16 23:49:22 mvp_r050_a1.0_c15_L10_N2047_official round 25000/40000 elapsed 32s
+2026/11/16 23:49:23 mvp_r050_a1.0_c15_L10_N2047_official round 26000/40000 elapsed 33s
+2026/11/16 23:49:24 mvp_r050_a1.0_c15_L10_N2047_official round 27000/40000 elapsed 34s
+2026/11/16 23:49:26 mvp_r050_a1.0_c15_L10_N2047_official round 28000/40000 elapsed 35s
+2026/11/16 23:49:27 mvp_r050_a1.0_c15_L10_N2047_official round 29000/40000 elapsed 37s
+2026/11/16 23:49:28 mvp_r050_a1.0_c15_L10_N2047_official round 30000/40000 elapsed 38s
+2026/11/16 23:49:29 mvp_r050_a1.0_c15_L10_N2047_official round 31000/40000 elapsed 39s
+2026/11/16 23:49:31 mvp_r050_a1.0_c15_L10_N2047_official round 32000/40000 elapsed 41s
+2026/11/16 23:49:32 mvp_r050_a1.0_c15_L10_N2047_official round 33000/40000 elapsed 42s
+2026/11/16 23:49:33 mvp_r050_a1.0_c15_L10_N2047_official round 34000/40000 elapsed 43s
+2026/11/16 23:49:34 mvp_r050_a1.0_c15_L10_N2047_official round 35000/40000 elapsed 44s
+2026/11/16 23:49:36 mvp_r050_a1.0_c15_L10_N2047_official round 36000/40000 elapsed 46s
+2026/11/16 23:49:37 mvp_r050_a1.0_c15_L10_N2047_official round 37000/40000 elapsed 47s
+2026/11/16 23:49:38 mvp_r050_a1.0_c15_L10_N2047_official round 38000/40000 elapsed 48s
+2026/11/16 23:49:40 mvp_r050_a1.0_c15_L10_N2047_official round 39000/40000 elapsed 50s
+2026/11/16 23:49:41 mvp_r050_a1.0_c15_L10_N2047_official round 40000/40000 elapsed 51s
+2026/11/16 23:49:41 COST mvp_r050_a1.0_c15_L10_N2047_official tv_K=0.2709 stash_blocks_per_real=1059.6 path_blocks_per_real=112.2 evict_blocks_per_real=114.6 log_entries_per_real=510.5 total_blocks_per_real=1286.5 timesteps_per_real=1
+2026/11/16 23:49:41 SUMMARY mvp_r050_a1.0_c15_L10_N2047_official tv_lca_uniform=0.9133 tv_lca_workload=0.7277 tv_leaf_uniform=0.4328 tv_leaf_workload=0.4756 snapshots=17
+2026/11/16 23:49:41 done mvp_r050_a1.0_c15_L10_N2047_official in 51s
