@@ -14,10 +14,11 @@ import (
 type ReplicaStrategy int
 
 const (
-	ReplicaNone    ReplicaStrategy = iota
-	ReplicaFewest                  // 候補リーフ数が最も少ないアドレスから複製 (既存 CAPE と同じ方針)
-	ReplicaHot                     // 最近アクセスされた (ts.a が大きい) アドレスから複製
-	ReplicaShallow                 // 空きスロットが浅いときだけ、候補リーフ数が最少のアドレスを複製
+	ReplicaNone     ReplicaStrategy = iota
+	ReplicaFewest                   // 候補リーフ数が最も少ないアドレスから複製 (既存 CAPE と同じ方針)
+	ReplicaHot                      // 最近アクセスされた (ts.a が大きい) アドレスから複製
+	ReplicaShallow                  // 空きスロットが浅いときだけ、候補リーフ数が最少のアドレスを複製
+	ReplicaStashHot                 // スタッシュにいる(=今のパス上にいない)ブロックだけを、a が大きい順に複製
 )
 
 type LeafRule int
@@ -577,6 +578,14 @@ func (c *Client) placeReplicas(P map[int]*Block, S []Block, repsOnPath []placedR
 	for _, b := range S {
 		src[b.Addr] = b
 	}
+	if c.cfg.Replicas == ReplicaStashHot {
+		// パス上の本体のコピーを同じパスに置いても入れ子になる(上へ移動したのと同じ)ので、
+		// スタッシュのブロックだけを複製元にする。
+		src = map[int]Block{}
+		for _, b := range S {
+			src[b.Addr] = b
+		}
+	}
 	if c.cfg.NoSelfRep {
 		delete(src, addr)
 	}
@@ -627,14 +636,19 @@ func (c *Client) placeReplicas(P map[int]*Block, S []Block, repsOnPath []placedR
 			if nRep[a] >= c.cfg.RMax {
 				continue
 			}
-			cur := intervalsSize(unionLeaves(L, Z, live[a]))
-			gain := intervalsSize(unionLeaves(L, Z, append(append([]int(nil), live[a]...), sl))) - cur
+			base := live[a]
+			if c.cfg.Replicas == ReplicaStashHot {
+				// スタッシュ位置は「いずれ木へ戻る」ので、木の中のコピーだけで増分を測る
+				base = treeOnly(base)
+			}
+			cur := intervalsSize(unionLeaves(L, Z, base))
+			gain := intervalsSize(unionLeaves(L, Z, append(append([]int(nil), base...), sl))) - cur
 			if gain <= 0 {
 				continue // 候補リーフが増えない場所 (既存コピーの部分木の内側) には置かない
 			}
 			var score int
 			switch c.cfg.Replicas {
-			case ReplicaHot:
+			case ReplicaHot, ReplicaStashHot:
 				score = src[a].TS.A
 			default: // Fewest / Shallow: 候補リーフが少ないものを優先
 				score = -cur
@@ -658,4 +672,14 @@ func (c *Client) placeReplicas(P map[int]*Block, S []Block, repsOnPath []placedR
 		c.Last.RepCreated++
 	}
 	return ml
+}
+
+func treeOnly(locs []int) []int {
+	out := make([]int, 0, len(locs))
+	for _, l := range locs {
+		if l >= 0 {
+			out = append(out, l)
+		}
+	}
+	return out
 }

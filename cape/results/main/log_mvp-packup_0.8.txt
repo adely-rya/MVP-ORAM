@@ -1,0 +1,9 @@
+2026/11/16 22:26:39 mvp-packup_r080_a1.0_c15_L10_N2047 round 1000/7000 elapsed 12s
+2026/11/16 22:26:51 mvp-packup_r080_a1.0_c15_L10_N2047 round 2000/7000 elapsed 24s
+2026/11/16 22:27:02 mvp-packup_r080_a1.0_c15_L10_N2047 round 3000/7000 elapsed 35s
+2026/11/16 22:27:13 mvp-packup_r080_a1.0_c15_L10_N2047 round 4000/7000 elapsed 46s
+2026/11/16 22:27:20 mvp-packup_r080_a1.0_c15_L10_N2047 round 5000/7000 elapsed 53s
+2026/11/16 22:27:27 mvp-packup_r080_a1.0_c15_L10_N2047 round 6000/7000 elapsed 1m0s
+2026/11/16 22:27:34 mvp-packup_r080_a1.0_c15_L10_N2047 round 7000/7000 elapsed 1m7s
+2026/11/16 22:27:34 SUMMARY mvp-packup_r080_a1.0_c15_L10_N2047 tv_lca_uniform=0.4758 tv_lca_workload=0.1360 tv_leaf_uniform=0.0595 tv_leaf_workload=0.0138 snapshots=29
+2026/11/16 22:27:34 done mvp-packup_r080_a1.0_c15_L10_N2047 in 1m7s

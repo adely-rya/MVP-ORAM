@@ -51,6 +51,8 @@ func main() {
 		cfg.Replicas = ReplicaHot
 	case "cape-shallow":
 		cfg.Replicas = ReplicaShallow
+	case "cape-stash":
+		cfg.Replicas = ReplicaStashHot
 	default:
 		log.Fatalf("unknown scheme %q", *scheme)
 	}

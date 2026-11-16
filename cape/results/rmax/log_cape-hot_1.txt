@@ -1,0 +1,9 @@
+2026/11/16 22:32:00 cape-hot_r080_a1.0_c15_L10_N2047_rmax1 round 1000/7000 elapsed 5s
+2026/11/16 22:32:05 cape-hot_r080_a1.0_c15_L10_N2047_rmax1 round 2000/7000 elapsed 10s
+2026/11/16 22:32:10 cape-hot_r080_a1.0_c15_L10_N2047_rmax1 round 3000/7000 elapsed 14s
+2026/11/16 22:32:15 cape-hot_r080_a1.0_c15_L10_N2047_rmax1 round 4000/7000 elapsed 19s
+2026/11/16 22:32:20 cape-hot_r080_a1.0_c15_L10_N2047_rmax1 round 5000/7000 elapsed 24s
+2026/11/16 22:32:24 cape-hot_r080_a1.0_c15_L10_N2047_rmax1 round 6000/7000 elapsed 29s
+2026/11/16 22:32:28 cape-hot_r080_a1.0_c15_L10_N2047_rmax1 round 7000/7000 elapsed 33s
+2026/11/16 22:32:28 SUMMARY cape-hot_r080_a1.0_c15_L10_N2047_rmax1 tv_lca_uniform=0.9055 tv_lca_workload=0.5185 tv_leaf_uniform=0.6240 tv_leaf_workload=0.2772 snapshots=29
+2026/11/16 22:32:28 done cape-hot_r080_a1.0_c15_L10_N2047_rmax1 in 33s

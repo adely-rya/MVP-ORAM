@@ -20,6 +20,7 @@ func allSchemes(L, Z, N int) map[string]*Config {
 		"cape":         {L: L, Z: Z, N: N, Replicas: ReplicaFewest, RMax: 4, NoSelfRep: true},
 		"cape-hot":     {L: L, Z: Z, N: N, Replicas: ReplicaHot, RMax: 4, NoSelfRep: true},
 		"cape-copy":    {L: L, Z: Z, N: N, Replicas: ReplicaFewest, RMax: 4, LeafRule: LeafCopyUniform, NoSelfRep: true},
+		"cape-stash":   {L: L, Z: Z, N: N, Replicas: ReplicaStashHot, RMax: 4, NoSelfRep: true},
 		"cape-shallow": {L: L, Z: Z, N: N, Replicas: ReplicaShallow, RMax: 8, MinDepth: 3, NoSelfRep: true},
 	}
 }

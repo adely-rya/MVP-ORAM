@@ -1,0 +1,9 @@
+2026/11/16 22:26:31 cape-shallow_r050_a1.0_c15_L10_N2047_rmax4 round 1000/7000 elapsed 4s
+2026/11/16 22:26:35 cape-shallow_r050_a1.0_c15_L10_N2047_rmax4 round 2000/7000 elapsed 8s
+2026/11/16 22:26:39 cape-shallow_r050_a1.0_c15_L10_N2047_rmax4 round 3000/7000 elapsed 12s
+2026/11/16 22:26:42 cape-shallow_r050_a1.0_c15_L10_N2047_rmax4 round 4000/7000 elapsed 15s
+2026/11/16 22:26:46 cape-shallow_r050_a1.0_c15_L10_N2047_rmax4 round 5000/7000 elapsed 19s
+2026/11/16 22:26:50 cape-shallow_r050_a1.0_c15_L10_N2047_rmax4 round 6000/7000 elapsed 23s
+2026/11/16 22:26:53 cape-shallow_r050_a1.0_c15_L10_N2047_rmax4 round 7000/7000 elapsed 26s
+2026/11/16 22:26:53 SUMMARY cape-shallow_r050_a1.0_c15_L10_N2047_rmax4 tv_lca_uniform=0.9222 tv_lca_workload=0.5237 tv_leaf_uniform=0.8044 tv_leaf_workload=0.3593 snapshots=29
+2026/11/16 22:26:53 done cape-shallow_r050_a1.0_c15_L10_N2047_rmax4 in 26s
