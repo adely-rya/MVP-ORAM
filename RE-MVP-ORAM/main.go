@@ -36,6 +36,11 @@ func RunExperiment(runMode string, experimentMode string, accessType string, ora
 		stashMetricsSequenceInterval = Version(100)
 	)
 
+	if normalizeExperimentMode(experimentMode) == "stash-trace" {
+		RunStashTraceExperiment(oramType, accessType)
+		return
+	}
+
 	if normalizeExperimentMode(experimentMode) == "statisticaldistance" {
 		RunStatisticalDistanceExperiment(oramType, accessType)
 		return

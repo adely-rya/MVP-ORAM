@@ -696,6 +696,9 @@ type MvpClient struct {
 	Server   chan<- ServerRequest
 
 	seq Version
+
+	// trace は計測用。nil のときは何も記録しない。
+	trace *capeEvictTrace
 }
 
 func NewMvpClient(l int, z int, clientID int, positionmap map[int]map[int]MvpPositionMapEntry, server chan<- ServerRequest) *MvpClient {
@@ -1467,6 +1470,10 @@ func (c *MvpClient) populatePath(W map[int][]MvpDataBlock, op OramOP, targetSig 
 		}
 	}
 
+	if c.trace != nil {
+		c.trace.recordAfterPlaceInPlace(c, usedSlot, unusedSlot, prioritylist)
+	}
+
 	// Phase 5.5: re-allocate
 	setBlock := make([]MvpDataBlock, 0, len(usedSlot))
 
@@ -1535,6 +1542,9 @@ func (c *MvpClient) populatePath(W map[int][]MvpDataBlock, op OramOP, targetSig 
 			priorityByAddr[block.Addr] = append(priorityByAddr[block.Addr], block)
 		}
 		unusedSlot, _ = c.placePriorityBlocks(priorityByAddr, unusedSlot, populatedPath, &populatedPathMap)
+		if c.trace != nil {
+			c.trace.recordLeftover(c, priorityByAddr)
+		}
 
 		// 空き slot に置けなかった priority block をすべて新しい stash 出力へ移す。
 		for _, blocks := range priorityByAddr {
@@ -1552,6 +1562,13 @@ func (c *MvpClient) populatePath(W map[int][]MvpDataBlock, op OramOP, targetSig 
 		}
 	} else if len(prioritylist) > 0 {
 		// 空き slot がない場合は、残った priority block をそのまま stash 出力へ移す。
+		if c.trace != nil {
+			leftover := make(map[int][]MvpDataBlock, len(prioritylist))
+			for _, block := range prioritylist {
+				leftover[block.Addr] = append(leftover[block.Addr], block)
+			}
+			c.trace.recordLeftover(c, leftover)
+		}
 		stashedAddr := make(map[int]bool, len(prioritylist))
 		for _, block := range prioritylist {
 			if stashedAddr[block.Addr] {
@@ -1568,7 +1585,14 @@ func (c *MvpClient) populatePath(W map[int][]MvpDataBlock, op OramOP, targetSig 
 
 	// Phase 6: fill any remaining empty slots with newly generated copies using unused signatures.
 	if len(unusedSlot) > 0 {
+		before := len(unusedSlot)
 		unusedSlot = c.placeCopyBlocks(copySourceByAddr, unusedSlot, populatedPath, &populatedPathMap)
+		if c.trace != nil {
+			c.trace.CopiesCreated = before - len(unusedSlot)
+		}
+	}
+	if c.trace != nil {
+		c.trace.EmptyAfterEvict = len(unusedSlot)
 	}
 
 	// 新しいpath、新しいstash、新しいPathMapを返す。

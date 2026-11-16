@@ -667,6 +667,10 @@ type BaseMvpClient struct {
 	Server   chan<- BaseMvpServerRequest
 
 	seq Version
+
+	// 計測用: 直近の populatePath で選んだ swap slot の数と、そのうち空だった数。
+	traceSwapChosen int
+	traceSwapEmpty  int
 }
 
 func NewBaseMvpClient(l int, z int, clientID int, positionmap map[int]BaseMvpPositionMapEntry, server chan<- BaseMvpServerRequest) *BaseMvpClient {
@@ -1077,9 +1081,14 @@ func (c *BaseMvpClient) populatePath(W map[int]BaseMvpDataBlock, op OramOP) (map
 	}
 
 	// 選んだslotをstash候補と入れ替える。
+	c.traceSwapChosen = len(swapSlot)
+	c.traceSwapEmpty = 0
 	for index, slotPosition := range swapSlot {
 		// swap前にそのslotへ置かれていたブロックを読む。
 		slot := populatedPath[slotPosition]
+		if slot.IsEmpty() {
+			c.traceSwapEmpty++
+		}
 		// swap後に置く新しいslotを作る。
 		newslot := NewBaseMvpSlot(c.seq)
 		// swap候補ブロックが残っていれば、このslotへ入れる。
