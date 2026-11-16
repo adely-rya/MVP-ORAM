@@ -1,0 +1,7 @@
+2026/11/16 23:26:25 mvp_r080_a0.0_c15_L10_N2047_evictcold round 1000/4000 elapsed 36s
+2026/11/16 23:26:53 mvp_r080_a0.0_c15_L10_N2047_evictcold round 2000/4000 elapsed 1m5s
+2026/11/16 23:27:15 mvp_r080_a0.0_c15_L10_N2047_evictcold round 3000/4000 elapsed 1m27s
+2026/11/16 23:27:34 mvp_r080_a0.0_c15_L10_N2047_evictcold round 4000/4000 elapsed 1m46s
+2026/11/16 23:27:34 COST mvp_r080_a0.0_c15_L10_N2047_evictcold tv_K=0.0106 stash_blocks_per_real=25853.3 path_blocks_per_real=69.4 evict_blocks_per_real=1767.5 log_entries_per_real=166.6 total_blocks_per_real=27690.2 timesteps_per_real=1
+2026/11/16 23:27:34 SUMMARY mvp_r080_a0.0_c15_L10_N2047_evictcold tv_lca_uniform=0.1504 tv_lca_workload=0.1504 tv_leaf_uniform=0.1114 tv_leaf_workload=0.1114 snapshots=14
+2026/11/16 23:27:34 done mvp_r080_a0.0_c15_L10_N2047_evictcold in 1m46s

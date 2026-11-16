@@ -1,0 +1,12 @@
+2026/11/16 23:33:28 mvp_r050_a1.0_c50_L17_N262143_official round 1000/10000 elapsed 8s
+2026/11/16 23:33:36 mvp_r050_a1.0_c50_L17_N262143_official round 2000/10000 elapsed 16s
+2026/11/16 23:33:45 mvp_r050_a1.0_c50_L17_N262143_official round 3000/10000 elapsed 25s
+2026/11/16 23:33:54 mvp_r050_a1.0_c50_L17_N262143_official round 4000/10000 elapsed 33s
+2026/11/16 23:34:03 mvp_r050_a1.0_c50_L17_N262143_official round 5000/10000 elapsed 43s
+2026/11/16 23:34:12 mvp_r050_a1.0_c50_L17_N262143_official round 6000/10000 elapsed 52s
+2026/11/16 23:34:21 mvp_r050_a1.0_c50_L17_N262143_official round 7000/10000 elapsed 1m1s
+2026/11/16 23:34:30 mvp_r050_a1.0_c50_L17_N262143_official round 8000/10000 elapsed 1m10s
+2026/11/16 23:34:39 mvp_r050_a1.0_c50_L17_N262143_official round 9000/10000 elapsed 1m19s
+2026/11/16 23:34:48 mvp_r050_a1.0_c50_L17_N262143_official round 10000/10000 elapsed 1m28s
+2026/11/16 23:34:48 COST mvp_r050_a1.0_c50_L17_N262143_official tv_K=0.3666 stash_blocks_per_real=6131.2 path_blocks_per_real=345.0 evict_blocks_per_real=194.6 log_entries_per_real=1775.6 total_blocks_per_real=6670.8 timesteps_per_real=1
+2026/11/16 23:34:48 done mvp_r050_a1.0_c50_L17_N262143_official in 1m28s

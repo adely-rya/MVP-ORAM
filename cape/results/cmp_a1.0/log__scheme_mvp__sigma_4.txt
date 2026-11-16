@@ -1,0 +1,23 @@
+2026/11/16 23:25:50 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 1000/20000 elapsed 1s
+2026/11/16 23:25:51 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 2000/20000 elapsed 3s
+2026/11/16 23:25:53 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 3000/20000 elapsed 5s
+2026/11/16 23:25:54 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 4000/20000 elapsed 6s
+2026/11/16 23:25:56 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 5000/20000 elapsed 7s
+2026/11/16 23:25:57 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 6000/20000 elapsed 9s
+2026/11/16 23:25:59 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 7000/20000 elapsed 11s
+2026/11/16 23:26:00 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 8000/20000 elapsed 12s
+2026/11/16 23:26:02 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 9000/20000 elapsed 14s
+2026/11/16 23:26:03 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 10000/20000 elapsed 15s
+2026/11/16 23:26:05 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 11000/20000 elapsed 16s
+2026/11/16 23:26:06 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 12000/20000 elapsed 18s
+2026/11/16 23:26:07 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 13000/20000 elapsed 19s
+2026/11/16 23:26:08 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 14000/20000 elapsed 20s
+2026/11/16 23:26:10 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 15000/20000 elapsed 21s
+2026/11/16 23:26:11 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 16000/20000 elapsed 22s
+2026/11/16 23:26:12 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 17000/20000 elapsed 24s
+2026/11/16 23:26:13 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 18000/20000 elapsed 25s
+2026/11/16 23:26:14 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 19000/20000 elapsed 26s
+2026/11/16 23:26:15 mvp_r080_a1.0_c15_L10_N2047_sigma4 round 20000/20000 elapsed 27s
+2026/11/16 23:26:15 COST mvp_r080_a1.0_c15_L10_N2047_sigma4 tv_K=0.0048 stash_blocks_per_real=1116.8 path_blocks_per_real=375.9 evict_blocks_per_real=294.5 log_entries_per_real=1417.3 total_blocks_per_real=1787.2 timesteps_per_real=5
+2026/11/16 23:26:15 SUMMARY mvp_r080_a1.0_c15_L10_N2047_sigma4 tv_lca_uniform=0.0005 tv_lca_workload=0.0077 tv_leaf_uniform=0.0000 tv_leaf_workload=0.0001 snapshots=14
+2026/11/16 23:26:15 done mvp_r080_a1.0_c15_L10_N2047_sigma4 in 27s

@@ -1,0 +1,35 @@
+2026/11/16 23:33:21 mvp_r050_a1.0_c15_L17_N262143_official round 1000/33334 elapsed 1s
+2026/11/16 23:33:22 mvp_r050_a1.0_c15_L17_N262143_official round 2000/33334 elapsed 2s
+2026/11/16 23:33:23 mvp_r050_a1.0_c15_L17_N262143_official round 3000/33334 elapsed 3s
+2026/11/16 23:33:24 mvp_r050_a1.0_c15_L17_N262143_official round 4000/33334 elapsed 4s
+2026/11/16 23:33:25 mvp_r050_a1.0_c15_L17_N262143_official round 5000/33334 elapsed 5s
+2026/11/16 23:33:26 mvp_r050_a1.0_c15_L17_N262143_official round 6000/33334 elapsed 6s
+2026/11/16 23:33:27 mvp_r050_a1.0_c15_L17_N262143_official round 7000/33334 elapsed 7s
+2026/11/16 23:33:28 mvp_r050_a1.0_c15_L17_N262143_official round 8000/33334 elapsed 8s
+2026/11/16 23:33:29 mvp_r050_a1.0_c15_L17_N262143_official round 9000/33334 elapsed 9s
+2026/11/16 23:33:31 mvp_r050_a1.0_c15_L17_N262143_official round 10000/33334 elapsed 11s
+2026/11/16 23:33:32 mvp_r050_a1.0_c15_L17_N262143_official round 11000/33334 elapsed 12s
+2026/11/16 23:33:33 mvp_r050_a1.0_c15_L17_N262143_official round 12000/33334 elapsed 13s
+2026/11/16 23:33:34 mvp_r050_a1.0_c15_L17_N262143_official round 13000/33334 elapsed 14s
+2026/11/16 23:33:35 mvp_r050_a1.0_c15_L17_N262143_official round 14000/33334 elapsed 15s
+2026/11/16 23:33:37 mvp_r050_a1.0_c15_L17_N262143_official round 15000/33334 elapsed 17s
+2026/11/16 23:33:38 mvp_r050_a1.0_c15_L17_N262143_official round 16000/33334 elapsed 18s
+2026/11/16 23:33:39 mvp_r050_a1.0_c15_L17_N262143_official round 17000/33334 elapsed 19s
+2026/11/16 23:33:41 mvp_r050_a1.0_c15_L17_N262143_official round 18000/33334 elapsed 21s
+2026/11/16 23:33:42 mvp_r050_a1.0_c15_L17_N262143_official round 19000/33334 elapsed 22s
+2026/11/16 23:33:43 mvp_r050_a1.0_c15_L17_N262143_official round 20000/33334 elapsed 23s
+2026/11/16 23:33:44 mvp_r050_a1.0_c15_L17_N262143_official round 21000/33334 elapsed 24s
+2026/11/16 23:33:46 mvp_r050_a1.0_c15_L17_N262143_official round 22000/33334 elapsed 26s
+2026/11/16 23:33:47 mvp_r050_a1.0_c15_L17_N262143_official round 23000/33334 elapsed 27s
+2026/11/16 23:33:49 mvp_r050_a1.0_c15_L17_N262143_official round 24000/33334 elapsed 28s
+2026/11/16 23:33:50 mvp_r050_a1.0_c15_L17_N262143_official round 25000/33334 elapsed 30s
+2026/11/16 23:33:51 mvp_r050_a1.0_c15_L17_N262143_official round 26000/33334 elapsed 31s
+2026/11/16 23:33:53 mvp_r050_a1.0_c15_L17_N262143_official round 27000/33334 elapsed 32s
+2026/11/16 23:33:54 mvp_r050_a1.0_c15_L17_N262143_official round 28000/33334 elapsed 34s
+2026/11/16 23:33:55 mvp_r050_a1.0_c15_L17_N262143_official round 29000/33334 elapsed 35s
+2026/11/16 23:33:57 mvp_r050_a1.0_c15_L17_N262143_official round 30000/33334 elapsed 37s
+2026/11/16 23:33:58 mvp_r050_a1.0_c15_L17_N262143_official round 31000/33334 elapsed 38s
+2026/11/16 23:34:00 mvp_r050_a1.0_c15_L17_N262143_official round 32000/33334 elapsed 40s
+2026/11/16 23:34:01 mvp_r050_a1.0_c15_L17_N262143_official round 33000/33334 elapsed 41s
+2026/11/16 23:34:01 COST mvp_r050_a1.0_c15_L17_N262143_official tv_K=0.1210 stash_blocks_per_real=553.9 path_blocks_per_real=106.9 evict_blocks_per_real=108.9 log_entries_per_real=471.4 total_blocks_per_real=769.8 timesteps_per_real=1
+2026/11/16 23:34:01 done mvp_r050_a1.0_c15_L17_N262143_official in 41s

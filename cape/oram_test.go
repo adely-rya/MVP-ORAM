@@ -51,8 +51,8 @@ func TestLinearizableAndNoLoss(t *testing.T) {
 // Algorithm 1/3: アクセスしたブロックは必ずスタッシュへ行く。
 func TestAccessedBlockGoesToStash(t *testing.T) {
 	for name, cfg := range allSchemes(6, 4, 127) {
-		if cfg.Sigma > 0 {
-			continue // ダミーアクセスのラウンドには対象ブロックがない
+		if cfg.Sigma > 0 || cfg.EmptyStart {
+			continue // ダミーアクセスのラウンド/未作成ブロックの読み出しには対象ブロックがない
 		}
 		sim := newTestSim(t, cfg, 1, 0.8, 0.8, 3)
 		for r := 0; r < 500; r++ {

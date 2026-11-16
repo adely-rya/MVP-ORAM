@@ -1,0 +1,7 @@
+2026/11/16 23:25:51 mvp_r080_a1.0_c15_L10_N2047 round 1000/4000 elapsed 2s
+2026/11/16 23:25:53 mvp_r080_a1.0_c15_L10_N2047 round 2000/4000 elapsed 5s
+2026/11/16 23:25:55 mvp_r080_a1.0_c15_L10_N2047 round 3000/4000 elapsed 7s
+2026/11/16 23:25:57 mvp_r080_a1.0_c15_L10_N2047 round 4000/4000 elapsed 9s
+2026/11/16 23:25:57 COST mvp_r080_a1.0_c15_L10_N2047 tv_K=0.0701 stash_blocks_per_real=680.8 path_blocks_per_real=78.3 evict_blocks_per_real=89.4 log_entries_per_real=384.8 total_blocks_per_real=848.5 timesteps_per_real=1
+2026/11/16 23:25:57 SUMMARY mvp_r080_a1.0_c15_L10_N2047 tv_lca_uniform=0.9571 tv_lca_workload=0.5626 tv_leaf_uniform=0.8248 tv_leaf_workload=0.3815 snapshots=14
+2026/11/16 23:25:57 done mvp_r080_a1.0_c15_L10_N2047 in 9s

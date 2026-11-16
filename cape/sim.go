@@ -69,7 +69,16 @@ const observerID = -1
 func NewSim(cfg *Config, clients int, wl *Workload, seed int64) *Sim {
 	rng := rand.New(rand.NewSource(seed))
 	srv := NewServer(cfg.L, cfg.Z)
-	initPM := initialize(srv, cfg, rng)
+	var initPM []pmEntry
+	if cfg.EmptyStart {
+		initPM = make([]pmEntry, cfg.N)
+		for a := range initPM {
+			initPM[a] = pmEntry{LocStash, tsBottom}
+		}
+		srv.stashes = []*stashVersion{{born: 0}}
+	} else {
+		initPM = initialize(srv, cfg, rng)
+	}
 	s := &Sim{cfg: cfg, srv: srv, wl: wl, rng: rng, expected: make([]int, cfg.N)}
 	for i := 0; i < clients; i++ {
 		s.clients = append(s.clients, NewClient(i, cfg, initPM, seed*7919+int64(i)+1))
@@ -116,6 +125,7 @@ type RoundStats struct {
 	PMEntries, PSBlocks, PSStash, EvictSlot int
 	EvictStash                              int
 	CandLeaves                              float64 // アクセス時の候補リーフ数(平均用の合計)
+	Client0Stash                            int     // 公開実装の Fig.7 の値: クライアント0が書いた新スタッシュの長さ(ラウンド合計)
 }
 
 func (s *Sim) Round() RoundStats {
@@ -173,8 +183,17 @@ func (s *Sim) Round() RoundStats {
 				s.round, cl.ID, ops[i].Addr, cl.Last.Data, s.expected[ops[i].Addr], cl.Last.ViaCopy))
 		}
 	}
-	for _, i := range s.rng.Perm(c) {
+	order := s.rng.Perm(c)
+	if s.cfg.FixedEvictOrder {
+		for i := range order {
+			order[i] = i
+		}
+	}
+	for _, i := range order {
 		cl := s.clients[i]
+		if i == 0 {
+			st.Client0Stash = len(outs[i].stash)
+		}
 		s.srv.Evict(cl.ID, cl.Last.Leaf, outs[i].ml, outs[i].path, outs[i].stash)
 		st.EvictSlot += (s.cfg.L + 1) * s.cfg.Z
 		st.EvictStash += len(outs[i].stash)
@@ -255,6 +274,7 @@ func (r *RoundStats) Add(o RoundStats) {
 	r.EvictSlot += o.EvictSlot
 	r.EvictStash += o.EvictStash
 	r.CandLeaves += o.CandLeaves
+	r.Client0Stash += o.Client0Stash
 }
 
 // IdealKDist: c 個のリーフを 2^L 個から独立一様に選んだときの異なるリーフ数の分布 (論文の比較対象)。

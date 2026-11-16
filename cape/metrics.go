@@ -70,7 +70,7 @@ func (s *Sim) Observe() GlobalState {
 		}
 	}
 	for a := 0; a < cfg.N; a++ {
-		if !found[a] {
+		if !found[a] && o.prim[a].TS != tsBottom {
 			g.Lost++
 		}
 	}

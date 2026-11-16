@@ -1,0 +1,15 @@
+2026/11/16 23:25:50 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 1000/12000 elapsed 2s
+2026/11/16 23:25:52 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 2000/12000 elapsed 4s
+2026/11/16 23:25:53 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 3000/12000 elapsed 5s
+2026/11/16 23:25:55 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 4000/12000 elapsed 7s
+2026/11/16 23:25:57 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 5000/12000 elapsed 8s
+2026/11/16 23:25:58 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 6000/12000 elapsed 10s
+2026/11/16 23:26:00 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 7000/12000 elapsed 12s
+2026/11/16 23:26:01 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 8000/12000 elapsed 13s
+2026/11/16 23:26:03 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 9000/12000 elapsed 15s
+2026/11/16 23:26:04 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 10000/12000 elapsed 16s
+2026/11/16 23:26:06 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 11000/12000 elapsed 18s
+2026/11/16 23:26:07 mvp_r080_a0.0_c15_L10_N2047_sigma2 round 12000/12000 elapsed 19s
+2026/11/16 23:26:07 COST mvp_r080_a0.0_c15_L10_N2047_sigma2 tv_K=0.0018 stash_blocks_per_real=934.0 path_blocks_per_real=236.1 evict_blocks_per_real=194.3 log_entries_per_real=912.1 total_blocks_per_real=1364.3 timesteps_per_real=3
+2026/11/16 23:26:07 SUMMARY mvp_r080_a0.0_c15_L10_N2047_sigma2 tv_lca_uniform=0.0006 tv_lca_workload=0.0006 tv_leaf_uniform=0.0001 tv_leaf_workload=0.0001 snapshots=14
+2026/11/16 23:26:07 done mvp_r080_a0.0_c15_L10_N2047_sigma2 in 19s

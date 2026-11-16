@@ -1,0 +1,7 @@
+2026/11/16 23:25:59 cape-stash_r080_a1.0_c15_L10_N2047_rmax4 round 1000/4000 elapsed 11s
+2026/11/16 23:26:08 cape-stash_r080_a1.0_c15_L10_N2047_rmax4 round 2000/4000 elapsed 20s
+2026/11/16 23:26:17 cape-stash_r080_a1.0_c15_L10_N2047_rmax4 round 3000/4000 elapsed 29s
+2026/11/16 23:26:25 cape-stash_r080_a1.0_c15_L10_N2047_rmax4 round 4000/4000 elapsed 37s
+2026/11/16 23:26:25 COST cape-stash_r080_a1.0_c15_L10_N2047_rmax4 tv_K=0.0070 stash_blocks_per_real=699.3 path_blocks_per_real=145.2 evict_blocks_per_real=90.6 log_entries_per_real=915.5 total_blocks_per_real=935.1 timesteps_per_real=1
+2026/11/16 23:26:25 SUMMARY cape-stash_r080_a1.0_c15_L10_N2047_rmax4 tv_lca_uniform=0.4772 tv_lca_workload=0.2276 tv_leaf_uniform=0.3425 tv_leaf_workload=0.1116 snapshots=14
+2026/11/16 23:26:25 done cape-stash_r080_a1.0_c15_L10_N2047_rmax4 in 37s

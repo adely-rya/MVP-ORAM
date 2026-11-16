@@ -1,0 +1,7 @@
+2026/11/16 23:26:02 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 1000/4000 elapsed 13s
+2026/11/16 23:26:13 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 2000/4000 elapsed 25s
+2026/11/16 23:26:23 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 3000/4000 elapsed 34s
+2026/11/16 23:26:31 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 4000/4000 elapsed 43s
+2026/11/16 23:26:31 COST cape-hot_r080_a0.0_c15_L10_N2047_rmax4 tv_K=0.0207 stash_blocks_per_real=1561.2 path_blocks_per_real=139.8 evict_blocks_per_real=148.1 log_entries_per_real=958.6 total_blocks_per_real=1849.1 timesteps_per_real=1
+2026/11/16 23:26:31 SUMMARY cape-hot_r080_a0.0_c15_L10_N2047_rmax4 tv_lca_uniform=0.8253 tv_lca_workload=0.8253 tv_leaf_uniform=0.3262 tv_leaf_workload=0.3262 snapshots=14
+2026/11/16 23:26:31 done cape-hot_r080_a0.0_c15_L10_N2047_rmax4 in 43s

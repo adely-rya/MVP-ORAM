@@ -35,6 +35,7 @@ func main() {
 	warmup := flag.Int("warmup", 20000, "accesses before security snapshots are aggregated")
 	seed := flag.Int64("seed", 542, "seed")
 	sigma := flag.Int("sigma", 0, "Strong MVP-ORAM: dummy accesses per real access")
+	official := flag.Bool("official", false, "match the public Java implementation: empty start, a-ascending in-place reorder, fixed evict order")
 	evictCold := flag.Bool("evictcold", false, "tweak: evict least recently accessed stash blocks first")
 	outDir := flag.String("out", "results", "output directory")
 	flag.Parse()
@@ -60,6 +61,9 @@ func main() {
 	}
 	cfg.Sigma = *sigma
 	cfg.EvictCold = *evictCold
+	if *official {
+		cfg.ReorderOfficial, cfg.EmptyStart, cfg.FixedEvictOrder = true, true, true
+	}
 	if *leafRule == "copy" {
 		cfg.LeafRule = LeafCopyUniform
 	}
@@ -81,6 +85,9 @@ func main() {
 	if cfg.EvictCold {
 		tag += "_evictcold"
 	}
+	if *official {
+		tag += "_official"
+	}
 	if err := os.MkdirAll(*outDir, 0o755); err != nil {
 		log.Fatal(err)
 	}
@@ -89,7 +96,7 @@ func main() {
 		"lost", "wrong_replica_data",
 		"sz_empty_per_access", "sz_empty_had_replica_per_access", "in_swapped", "in_collision", "in_target", "out_to_path",
 		"rep_created", "rep_dropped", "rep_kept", "via_replica_frac", "cand_leaves_at_access",
-		"ml_len_read", "ml_len_write", "bw_getpm_entries", "bw_getps_path_blocks", "bw_getps_stash_blocks", "bw_evict_blocks"})
+		"ml_len_read", "ml_len_write", "bw_getpm_entries", "bw_getps_path_blocks", "bw_getps_stash_blocks", "bw_evict_blocks", "client0_new_stash"})
 	sec := newCSV(filepath.Join(*outDir, tag+"_security.csv"), []string{
 		"round", "accesses", "stash", "tv_lca_uniform", "tv_lca_workload", "tv_leaf_uniform", "tv_leaf_workload",
 		"cand_p10", "cand_p50", "cand_p90", "cand_nostash_p10", "cand_nostash_p50", "cand_nostash_p90",
@@ -130,7 +137,7 @@ func main() {
 				float64(win.RepKept)/a, float64(win.ViaReplica)/a, win.CandLeaves/a,
 				float64(win.MlLenRead)/float64(max(win.Reads, 1)), float64(win.MlLenWrite)/float64(max(win.Writes, 1)),
 				float64(win.PMEntries)/a, float64(win.PSBlocks)/a, float64(win.PSStash)/a,
-				float64(win.EvictSlot+win.EvictStash)/a)
+				float64(win.EvictSlot+win.EvictStash)/a, float64(win.Client0Stash)/float64(*sample))
 			win = RoundStats{}
 		}
 		if r%(*secEvery*(cfg.Sigma+1)) == 0 && r > warmRounds {

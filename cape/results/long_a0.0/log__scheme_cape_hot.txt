@@ -1,0 +1,43 @@
+2026/11/16 23:32:14 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 1000/40000 elapsed 6s
+2026/11/16 23:32:21 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 2000/40000 elapsed 13s
+2026/11/16 23:32:27 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 3000/40000 elapsed 20s
+2026/11/16 23:32:34 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 4000/40000 elapsed 26s
+2026/11/16 23:32:40 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 5000/40000 elapsed 33s
+2026/11/16 23:32:47 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 6000/40000 elapsed 39s
+2026/11/16 23:32:53 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 7000/40000 elapsed 46s
+2026/11/16 23:33:00 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 8000/40000 elapsed 53s
+2026/11/16 23:33:06 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 9000/40000 elapsed 59s
+2026/11/16 23:33:12 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 10000/40000 elapsed 1m5s
+2026/11/16 23:33:18 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 11000/40000 elapsed 1m11s
+2026/11/16 23:33:25 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 12000/40000 elapsed 1m17s
+2026/11/16 23:33:31 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 13000/40000 elapsed 1m24s
+2026/11/16 23:33:38 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 14000/40000 elapsed 1m31s
+2026/11/16 23:33:45 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 15000/40000 elapsed 1m37s
+2026/11/16 23:33:51 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 16000/40000 elapsed 1m44s
+2026/11/16 23:33:58 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 17000/40000 elapsed 1m50s
+2026/11/16 23:34:04 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 18000/40000 elapsed 1m57s
+2026/11/16 23:34:10 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 19000/40000 elapsed 2m3s
+2026/11/16 23:34:16 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 20000/40000 elapsed 2m8s
+2026/11/16 23:34:21 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 21000/40000 elapsed 2m14s
+2026/11/16 23:34:26 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 22000/40000 elapsed 2m19s
+2026/11/16 23:34:31 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 23000/40000 elapsed 2m24s
+2026/11/16 23:34:36 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 24000/40000 elapsed 2m29s
+2026/11/16 23:34:41 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 25000/40000 elapsed 2m34s
+2026/11/16 23:34:46 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 26000/40000 elapsed 2m39s
+2026/11/16 23:34:51 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 27000/40000 elapsed 2m44s
+2026/11/16 23:34:56 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 28000/40000 elapsed 2m49s
+2026/11/16 23:35:01 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 29000/40000 elapsed 2m53s
+2026/11/16 23:35:05 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 30000/40000 elapsed 2m58s
+2026/11/16 23:35:10 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 31000/40000 elapsed 3m2s
+2026/11/16 23:35:14 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 32000/40000 elapsed 3m7s
+2026/11/16 23:35:19 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 33000/40000 elapsed 3m11s
+2026/11/16 23:35:23 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 34000/40000 elapsed 3m16s
+2026/11/16 23:35:28 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 35000/40000 elapsed 3m20s
+2026/11/16 23:35:32 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 36000/40000 elapsed 3m24s
+2026/11/16 23:35:36 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 37000/40000 elapsed 3m29s
+2026/11/16 23:35:40 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 38000/40000 elapsed 3m33s
+2026/11/16 23:35:45 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 39000/40000 elapsed 3m37s
+2026/11/16 23:35:49 cape-hot_r080_a0.0_c15_L10_N2047_rmax4 round 40000/40000 elapsed 3m41s
+2026/11/16 23:35:49 COST cape-hot_r080_a0.0_c15_L10_N2047_rmax4 tv_K=0.0171 stash_blocks_per_real=1548.5 path_blocks_per_real=139.8 evict_blocks_per_real=147.2 log_entries_per_real=955.6 total_blocks_per_real=1835.6 timesteps_per_real=1
+2026/11/16 23:35:49 SUMMARY cape-hot_r080_a0.0_c15_L10_N2047_rmax4 tv_lca_uniform=0.8269 tv_lca_workload=0.8269 tv_leaf_uniform=0.3256 tv_leaf_workload=0.3256 snapshots=20
+2026/11/16 23:35:49 done cape-hot_r080_a0.0_c15_L10_N2047_rmax4 in 3m41s

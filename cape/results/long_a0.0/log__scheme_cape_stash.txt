@@ -1,0 +1,43 @@
+2026/11/16 23:32:15 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 1000/40000 elapsed 8s
+2026/11/16 23:32:23 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 2000/40000 elapsed 15s
+2026/11/16 23:32:31 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 3000/40000 elapsed 23s
+2026/11/16 23:32:39 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 4000/40000 elapsed 31s
+2026/11/16 23:32:46 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 5000/40000 elapsed 39s
+2026/11/16 23:32:54 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 6000/40000 elapsed 47s
+2026/11/16 23:33:02 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 7000/40000 elapsed 55s
+2026/11/16 23:33:09 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 8000/40000 elapsed 1m2s
+2026/11/16 23:33:17 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 9000/40000 elapsed 1m9s
+2026/11/16 23:33:25 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 10000/40000 elapsed 1m17s
+2026/11/16 23:33:33 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 11000/40000 elapsed 1m25s
+2026/11/16 23:33:41 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 12000/40000 elapsed 1m34s
+2026/11/16 23:33:48 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 13000/40000 elapsed 1m41s
+2026/11/16 23:33:56 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 14000/40000 elapsed 1m49s
+2026/11/16 23:34:04 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 15000/40000 elapsed 1m57s
+2026/11/16 23:34:11 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 16000/40000 elapsed 2m4s
+2026/11/16 23:34:18 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 17000/40000 elapsed 2m11s
+2026/11/16 23:34:24 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 18000/40000 elapsed 2m17s
+2026/11/16 23:34:31 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 19000/40000 elapsed 2m23s
+2026/11/16 23:34:37 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 20000/40000 elapsed 2m29s
+2026/11/16 23:34:43 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 21000/40000 elapsed 2m35s
+2026/11/16 23:34:49 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 22000/40000 elapsed 2m41s
+2026/11/16 23:34:54 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 23000/40000 elapsed 2m47s
+2026/11/16 23:35:00 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 24000/40000 elapsed 2m53s
+2026/11/16 23:35:05 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 25000/40000 elapsed 2m58s
+2026/11/16 23:35:11 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 26000/40000 elapsed 3m4s
+2026/11/16 23:35:16 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 27000/40000 elapsed 3m9s
+2026/11/16 23:35:22 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 28000/40000 elapsed 3m14s
+2026/11/16 23:35:27 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 29000/40000 elapsed 3m19s
+2026/11/16 23:35:32 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 30000/40000 elapsed 3m24s
+2026/11/16 23:35:37 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 31000/40000 elapsed 3m29s
+2026/11/16 23:35:42 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 32000/40000 elapsed 3m35s
+2026/11/16 23:35:47 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 33000/40000 elapsed 3m40s
+2026/11/16 23:35:52 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 34000/40000 elapsed 3m44s
+2026/11/16 23:35:57 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 35000/40000 elapsed 3m49s
+2026/11/16 23:36:02 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 36000/40000 elapsed 3m54s
+2026/11/16 23:36:08 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 37000/40000 elapsed 4m0s
+2026/11/16 23:36:13 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 38000/40000 elapsed 4m5s
+2026/11/16 23:36:18 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 39000/40000 elapsed 4m11s
+2026/11/16 23:36:23 cape-stash_r080_a0.0_c15_L10_N2047_rmax4 round 40000/40000 elapsed 4m16s
+2026/11/16 23:36:23 COST cape-stash_r080_a0.0_c15_L10_N2047_rmax4 tv_K=0.0087 stash_blocks_per_real=1403.0 path_blocks_per_real=145.7 evict_blocks_per_real=137.5 log_entries_per_real=977.1 total_blocks_per_real=1686.3 timesteps_per_real=1
+2026/11/16 23:36:23 SUMMARY cape-stash_r080_a0.0_c15_L10_N2047_rmax4 tv_lca_uniform=0.4549 tv_lca_workload=0.4549 tv_leaf_uniform=0.2747 tv_leaf_workload=0.2747 snapshots=20
+2026/11/16 23:36:23 done cape-stash_r080_a0.0_c15_L10_N2047_rmax4 in 4m16s

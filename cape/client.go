@@ -38,6 +38,10 @@ type Config struct {
 	NoSelfRep bool // アクセス対象ブロックはその回のパスに複製しない (既定 true)
 	EvictCold bool // 工夫: スタッシュから木へ戻すブロックを a の小さい順に選ぶ (論文はランダム)
 	Sigma     int  // Strong MVP-ORAM: 実アクセス1回につき σ 回のダミーアクセス
+	// 公開実装 (github.com/rvassantlal/MVPORAM) 互換の設定
+	ReorderOfficial bool // a 昇順で root 側から、埋まっているスロットだけ並べ替え
+	EmptyStart      bool // ORAM を空で開始 (書き込みで初めてブロックが生まれる)
+	FixedEvictOrder bool // evict の順番を 0..c-1 に固定
 }
 
 type pmEntry struct {
@@ -320,6 +324,15 @@ func (c *Client) Finish(op Op, path map[int][]Block, stashes [][]Block) (ml []Lo
 			}
 		}
 	}
+	if !ok && c.prim[op.Addr].TS == tsBottom {
+		// 一度も書かれていないアドレス (公開実装の「空の ORAM から開始」)
+		if !op.Write {
+			c.Last.Data = 0
+			return c.populatePath(W, fromStash, repsOnPathSlots(repsOnPath, func(r repAt) (Block, int) { return r.b, r.sl }), pathSlots, onPath, -1, -1)
+		}
+		target = Block{Addr: op.Addr}
+		ok = true
+	}
 	if !ok {
 		panic("target block not found in working set")
 	}
@@ -467,6 +480,9 @@ func (c *Client) populatePath(W map[int]Block, fromStash map[int]bool, repsOnPat
 	}
 	sort.SliceStable(Bl, func(i, j int) bool {
 		if Bl[i].TS.A != Bl[j].TS.A {
+			if c.cfg.ReorderOfficial {
+				return Bl[i].TS.A < Bl[j].TS.A // 公開実装: a の小さい(古い)ブロックを root 側へ
+			}
 			return Bl[i].TS.A > Bl[j].TS.A
 		}
 		return Bl[i].Addr < Bl[j].Addr
@@ -485,6 +501,15 @@ func (c *Client) populatePath(W map[int]Block, fromStash map[int]bool, repsOnPat
 		// 対照方式: 空きスロットも含めて root 側から詰める (レプリカは使わない前提)
 		order = order[:0]
 		order = append(order, pathSlots...)
+	}
+	if c.cfg.ReorderOfficial {
+		// 公開実装: 埋まっているスロットの位置は変えず、中身だけを並べ替える
+		order = order[:0]
+		for _, sl := range pathSlots {
+			if P[sl] != nil {
+				order = append(order, sl)
+			}
+		}
 	}
 	for _, sl := range pathSlots {
 		P[sl] = nil

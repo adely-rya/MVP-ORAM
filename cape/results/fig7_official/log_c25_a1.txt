@@ -1,0 +1,22 @@
+2026/11/16 23:33:22 mvp_r050_a1.0_c25_L17_N262143_official round 1000/20000 elapsed 2s
+2026/11/16 23:33:24 mvp_r050_a1.0_c25_L17_N262143_official round 2000/20000 elapsed 4s
+2026/11/16 23:33:27 mvp_r050_a1.0_c25_L17_N262143_official round 3000/20000 elapsed 7s
+2026/11/16 23:33:29 mvp_r050_a1.0_c25_L17_N262143_official round 4000/20000 elapsed 9s
+2026/11/16 23:33:31 mvp_r050_a1.0_c25_L17_N262143_official round 5000/20000 elapsed 11s
+2026/11/16 23:33:34 mvp_r050_a1.0_c25_L17_N262143_official round 6000/20000 elapsed 14s
+2026/11/16 23:33:36 mvp_r050_a1.0_c25_L17_N262143_official round 7000/20000 elapsed 16s
+2026/11/16 23:33:39 mvp_r050_a1.0_c25_L17_N262143_official round 8000/20000 elapsed 19s
+2026/11/16 23:33:42 mvp_r050_a1.0_c25_L17_N262143_official round 9000/20000 elapsed 22s
+2026/11/16 23:33:44 mvp_r050_a1.0_c25_L17_N262143_official round 10000/20000 elapsed 24s
+2026/11/16 23:33:47 mvp_r050_a1.0_c25_L17_N262143_official round 11000/20000 elapsed 27s
+2026/11/16 23:33:50 mvp_r050_a1.0_c25_L17_N262143_official round 12000/20000 elapsed 30s
+2026/11/16 23:33:53 mvp_r050_a1.0_c25_L17_N262143_official round 13000/20000 elapsed 33s
+2026/11/16 23:33:56 mvp_r050_a1.0_c25_L17_N262143_official round 14000/20000 elapsed 36s
+2026/11/16 23:33:59 mvp_r050_a1.0_c25_L17_N262143_official round 15000/20000 elapsed 38s
+2026/11/16 23:34:02 mvp_r050_a1.0_c25_L17_N262143_official round 16000/20000 elapsed 41s
+2026/11/16 23:34:04 mvp_r050_a1.0_c25_L17_N262143_official round 17000/20000 elapsed 44s
+2026/11/16 23:34:07 mvp_r050_a1.0_c25_L17_N262143_official round 18000/20000 elapsed 47s
+2026/11/16 23:34:10 mvp_r050_a1.0_c25_L17_N262143_official round 19000/20000 elapsed 50s
+2026/11/16 23:34:13 mvp_r050_a1.0_c25_L17_N262143_official round 20000/20000 elapsed 53s
+2026/11/16 23:34:13 COST mvp_r050_a1.0_c25_L17_N262143_official tv_K=0.2037 stash_blocks_per_real=1544.4 path_blocks_per_real=171.6 evict_blocks_per_real=133.8 log_entries_per_real=795.1 total_blocks_per_real=1849.7 timesteps_per_real=1
+2026/11/16 23:34:13 done mvp_r050_a1.0_c25_L17_N262143_official in 53s
