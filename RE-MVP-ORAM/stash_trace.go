@@ -503,7 +503,7 @@ var capeAccessHeader = []string{"round", "client", "op", "via_replica",
 	"out_retained_primary", "out_retained_replica", "out_collision_primary", "out_collision_replica",
 	"outflow_stash_to_path",
 	"dedup_deleted", "dedup_deleted_same_key", "dedup_deleted_primary",
-	"copies_created", "empty_after_evict"}
+	"copies_created", "empty_after_evict", "path_map_len", "stash_dup_in_w"}
 
 type capePrepared struct {
 	client   *MvpClient
@@ -608,7 +608,7 @@ func runCapeStashTrace(cfg stashTraceConfig) {
 				t.StashOutRetainedPrimary, t.StashOutRetainedReplica, t.StashOutCollisionPrimary, t.StashOutCollisionReplica,
 				outflow,
 				t.DedupDeleted, t.DedupDeletedSameKey, t.DedupDeletedPrimary,
-				t.CopiesCreated, t.EmptyAfterEvict)
+				t.CopiesCreated, t.EmptyAfterEvict, len(p.pathMap), p.stashDup)
 		}
 		if round%cfg.sampleEvery == 0 || round == rounds {
 			st := observeCape(server.Requests, observer, cfg.addrCount)
@@ -623,7 +623,7 @@ func runCapeStashTrace(cfg stashTraceConfig) {
 }
 
 var baseAccessHeader = []string{"round", "client", "op", "path_slots", "swap_chosen", "swap_empty",
-	"stash_in_size", "stash_out_size", "inflow_target", "inflow_swapped_out", "outflow_stash_to_path", "w_size"}
+	"stash_in_size", "stash_out_size", "inflow_target", "inflow_swapped_out", "outflow_stash_to_path", "w_size", "path_map_len"}
 
 type basePrepared struct {
 	client      *BaseMvpClient
@@ -728,7 +728,7 @@ func runBaseStashTrace(cfg stashTraceConfig) {
 		for i, p := range prepared {
 			c := p.client
 			accessW.row(round, i, p.op.OP, (c.L+1)*c.Z, c.traceSwapChosen, c.traceSwapEmpty,
-				p.stashIn, len(p.stash), boolInt(p.targetPath), p.inflowOther, p.outflow, p.wSize)
+				p.stashIn, len(p.stash), boolInt(p.targetPath), p.inflowOther, p.outflow, p.wSize, len(p.pathMap))
 		}
 		if round%cfg.sampleEvery == 0 || round == rounds {
 			st := observeBase(server.Requests, observer, cfg.addrCount)
