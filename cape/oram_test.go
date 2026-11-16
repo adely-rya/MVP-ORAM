@@ -15,13 +15,16 @@ func newTestSim(t *testing.T, cfg *Config, clients int, alpha, read float64, see
 
 func allSchemes(L, Z, N int) map[string]*Config {
 	return map[string]*Config{
-		"mvp":          {L: L, Z: Z, N: N, NoSelfRep: true},
-		"mvp-packup":   {L: L, Z: Z, N: N, PackUp: true, NoSelfRep: true},
-		"cape":         {L: L, Z: Z, N: N, Replicas: ReplicaFewest, RMax: 4, NoSelfRep: true},
-		"cape-hot":     {L: L, Z: Z, N: N, Replicas: ReplicaHot, RMax: 4, NoSelfRep: true},
-		"cape-copy":    {L: L, Z: Z, N: N, Replicas: ReplicaFewest, RMax: 4, LeafRule: LeafCopyUniform, NoSelfRep: true},
-		"cape-stash":   {L: L, Z: Z, N: N, Replicas: ReplicaStashHot, RMax: 4, NoSelfRep: true},
-		"cape-shallow": {L: L, Z: Z, N: N, Replicas: ReplicaShallow, RMax: 8, MinDepth: 3, NoSelfRep: true},
+		"mvp":           {L: L, Z: Z, N: N, NoSelfRep: true},
+		"mvp-packup":    {L: L, Z: Z, N: N, PackUp: true, NoSelfRep: true},
+		"cape":          {L: L, Z: Z, N: N, Replicas: ReplicaFewest, RMax: 4, NoSelfRep: true},
+		"cape-hot":      {L: L, Z: Z, N: N, Replicas: ReplicaHot, RMax: 4, NoSelfRep: true},
+		"cape-copy":     {L: L, Z: Z, N: N, Replicas: ReplicaFewest, RMax: 4, LeafRule: LeafCopyUniform, NoSelfRep: true},
+		"cape-stash":    {L: L, Z: Z, N: N, Replicas: ReplicaStashHot, RMax: 4, NoSelfRep: true},
+		"strong-s2":     {L: L, Z: Z, N: N, Sigma: 2, NoSelfRep: true},
+		"cape-stash-s1": {L: L, Z: Z, N: N, Replicas: ReplicaStashHot, RMax: 4, Sigma: 1, NoSelfRep: true},
+		"evictcold":     {L: L, Z: Z, N: N, EvictCold: true, NoSelfRep: true},
+		"cape-shallow":  {L: L, Z: Z, N: N, Replicas: ReplicaShallow, RMax: 8, MinDepth: 3, NoSelfRep: true},
 	}
 }
 
@@ -48,6 +51,9 @@ func TestLinearizableAndNoLoss(t *testing.T) {
 // Algorithm 1/3: アクセスしたブロックは必ずスタッシュへ行く。
 func TestAccessedBlockGoesToStash(t *testing.T) {
 	for name, cfg := range allSchemes(6, 4, 127) {
+		if cfg.Sigma > 0 {
+			continue // ダミーアクセスのラウンドには対象ブロックがない
+		}
 		sim := newTestSim(t, cfg, 1, 0.8, 0.8, 3)
 		for r := 0; r < 500; r++ {
 			cl := sim.clients[0]
@@ -163,5 +169,12 @@ func TestLogLengthReadWriteSimilar(t *testing.T) {
 	t.Logf("mean Ml length read=%.2f write=%.2f", mr, mw)
 	if math.Abs(mr-mw) > 1.5 {
 		t.Fatalf("read/write log length differ: %.2f vs %.2f", mr, mw)
+	}
+}
+
+func TestIdealKDist(t *testing.T) {
+	p := IdealKDist(1, 3) // 2 リーフ, 3 回
+	if math.Abs(p[1]-0.25) > 1e-12 || math.Abs(p[2]-0.75) > 1e-12 {
+		t.Fatalf("got %v", p)
 	}
 }

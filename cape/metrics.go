@@ -275,6 +275,11 @@ func (s *Sim) Security(weights []float64) SecuritySnapshot {
 				mm += v * v
 			}
 			ge1[d] = same1[t][d]
+			if s.cfg.Sigma > 0 {
+				// Strong MVP-ORAM: 同じブロックを狙う2クライアントは別のタイムステップに分かれるので、
+				// 同時に観測される2本は「実アクセス」と「一様なダミー」 → 共通祖先が深さ d 以上の確率は 2^-d
+				ge1[d] = math.Pow(2, -float64(d))
+			}
 			ge0[d] = (mm - sq[t][d]) / (1 - sumW2)
 		}
 		snap.H1[t] = make([]float64, L+1)

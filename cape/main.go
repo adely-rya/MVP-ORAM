@@ -34,6 +34,8 @@ func main() {
 	secEvery := flag.Int("secevery", 200, "rounds between security snapshots")
 	warmup := flag.Int("warmup", 20000, "accesses before security snapshots are aggregated")
 	seed := flag.Int64("seed", 542, "seed")
+	sigma := flag.Int("sigma", 0, "Strong MVP-ORAM: dummy accesses per real access")
+	evictCold := flag.Bool("evictcold", false, "tweak: evict least recently accessed stash blocks first")
 	outDir := flag.String("out", "results", "output directory")
 	flag.Parse()
 
@@ -56,6 +58,8 @@ func main() {
 	default:
 		log.Fatalf("unknown scheme %q", *scheme)
 	}
+	cfg.Sigma = *sigma
+	cfg.EvictCold = *evictCold
 	if *leafRule == "copy" {
 		cfg.LeafRule = LeafCopyUniform
 	}
@@ -70,6 +74,12 @@ func main() {
 	}
 	if cfg.LeafRule == LeafCopyUniform {
 		tag += "_copyrule"
+	}
+	if cfg.Sigma > 0 {
+		tag += fmt.Sprintf("_sigma%d", cfg.Sigma)
+	}
+	if cfg.EvictCold {
+		tag += "_evictcold"
 	}
 	if err := os.MkdirAll(*outDir, 0o755); err != nil {
 		log.Fatal(err)
@@ -87,7 +97,9 @@ func main() {
 	defer ts.close()
 	defer sec.close()
 
-	rounds := (*accesses + *clients - 1) / *clients
+	rounds := (*accesses + *clients - 1) / *clients * (cfg.Sigma + 1)
+	warmRounds := (*warmup + *clients - 1) / *clients * (cfg.Sigma + 1)
+	var bwTot RoundStats
 	var win RoundStats
 	var aggH1, aggH0 [2][]float64
 	var aggTV, aggTVLeaf [2]float64
@@ -97,7 +109,14 @@ func main() {
 	kHist := map[int]int{}
 	started := time.Now()
 	for r := 1; r <= rounds; r++ {
-		win.Add(sim.Round())
+		rs := sim.Round()
+		win.Add(rs)
+		if r == warmRounds {
+			sim.KHist = nil
+		}
+		if r > warmRounds {
+			bwTot.Add(rs)
+		}
 		if r%*sample == 0 || r == rounds {
 			g := sim.Observe()
 			if g.Lost > 0 || g.WrongData > 0 {
@@ -114,7 +133,7 @@ func main() {
 				float64(win.EvictSlot+win.EvictStash)/a)
 			win = RoundStats{}
 		}
-		if r%*secEvery == 0 && r**clients >= *warmup {
+		if r%(*secEvery*(cfg.Sigma+1)) == 0 && r > warmRounds {
 			snap := sim.Security(wl.Weights)
 			var nostash, kvals []int
 			k1, k2, k3, kn := 0, 0, 0, 0
@@ -182,6 +201,11 @@ func main() {
 		dist.row("k_nonnested", kv, kHist[kv])
 	}
 	dist.close()
+	tvK := KDistanceTV(sim.KHist, IdealKDist(cfg.L, *clients))
+	a := float64(max(bwTot.Accesses, 1))
+	log.Printf("COST %s tv_K=%.4f stash_blocks_per_real=%.1f path_blocks_per_real=%.1f evict_blocks_per_real=%.1f log_entries_per_real=%.1f total_blocks_per_real=%.1f timesteps_per_real=%d",
+		tag, tvK, float64(bwTot.PSStash)/a, float64(bwTot.PSBlocks)/a, float64(bwTot.EvictSlot+bwTot.EvictStash)/a,
+		float64(bwTot.PMEntries+bwTot.MlLen)/a, float64(bwTot.PSStash+bwTot.PSBlocks+bwTot.EvictSlot+bwTot.EvictStash)/a, cfg.Sigma+1)
 	if nSec > 0 {
 		log.Printf("SUMMARY %s tv_lca_uniform=%.4f tv_lca_workload=%.4f tv_leaf_uniform=%.4f tv_leaf_workload=%.4f snapshots=%d",
 			tag, aggTV[0]/float64(nSec), aggTV[1]/float64(nSec), aggTVLeaf[0]/float64(nSec), aggTVLeaf[1]/float64(nSec), nSec)

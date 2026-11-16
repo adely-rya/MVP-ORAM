@@ -36,6 +36,8 @@ type Config struct {
 	LeafRule  LeafRule
 	MinDepth  int  // ReplicaShallow 用: この深さ以下 (root=0) のスロットにだけ作る
 	NoSelfRep bool // アクセス対象ブロックはその回のパスに複製しない (既定 true)
+	EvictCold bool // 工夫: スタッシュから木へ戻すブロックを a の小さい順に選ぶ (論文はランダム)
+	Sigma     int  // Strong MVP-ORAM: 実アクセス1回につき σ 回のダミーアクセス
 }
 
 type pmEntry struct {
@@ -227,6 +229,7 @@ type Op struct {
 	Write bool
 	Addr  int
 	Data  int
+	Dummy bool // Strong MVP-ORAM のダミーアクセス (ランダムなリーフを読んで退避だけ行う)
 }
 
 // AccessTrace はスタッシュの増減とレプリカの動きを記録する。
@@ -250,6 +253,11 @@ func (c *Client) Prepare(seq int, diff []LogEntry, op Op) (leaf int) {
 	c.seq = seq
 	c.Consolidate(diff)
 	c.Last = AccessTrace{}
+	if op.Dummy {
+		leaf = c.rng.Intn(1 << c.cfg.L)
+		c.Last.Leaf = leaf
+		return leaf
+	}
 	leaf, via, _ := c.chooseLeaf(op.Addr)
 	c.Last.Leaf, c.Last.ViaCopy = leaf, via
 	return leaf
@@ -296,6 +304,9 @@ func (c *Client) Finish(op Op, path map[int][]Block, stashes [][]Block) (ml []Lo
 		}
 	}
 	c.Last.StashBefore = len(fromStash)
+	if op.Dummy {
+		return c.populatePath(W, fromStash, repsOnPathSlots(repsOnPath, func(r repAt) (Block, int) { return r.b, r.sl }), pathSlots, onPath, -1, -1)
+	}
 
 	// アクセス対象 (Algorithm 1 L8-12)。レプリカ経由なら、レプリカの内容から本体を作り直す
 	// (本体は必ずスタッシュへ行くので、元の本体は古い版として無効化される)。
@@ -355,7 +366,10 @@ func (c *Client) populatePath(W map[int]Block, fromStash map[int]bool, repsOnPat
 	P := make(map[int]*Block, len(pathSlots))
 	var ml []LogEntry
 	used := map[int]bool{}
-	targetSlot := c.prim[addr].Loc // ⟨sl, ⟩ ← pm[addr]
+	targetSlot := LocStash // ⟨sl, ⟩ ← pm[addr] (ダミーなら ⊥)
+	if addr >= 0 {
+		targetSlot = c.prim[addr].Loc
+	}
 
 	// L15-20: 本体を pm の位置へ。衝突時は s が最大のものを置き、残りは W に残す。
 	collided := map[int]bool{}
@@ -411,6 +425,10 @@ func (c *Client) populatePath(W map[int]Block, fromStash map[int]bool, repsOnPat
 	}
 	sort.Ints(pool)
 	c.rng.Shuffle(len(pool), func(i, j int) { pool[i], pool[j] = pool[j], pool[i] })
+	if c.cfg.EvictCold {
+		// 工夫: アクセスの古い (a が小さい) ブロックから木へ戻し、人気のブロックをスタッシュ(=全パスが候補)に残す
+		sort.SliceStable(pool, func(i, j int) bool { return W[pool[i]].TS.A < W[pool[j]].TS.A })
+	}
 	if len(pool) > Z {
 		pool = pool[:Z]
 	}
