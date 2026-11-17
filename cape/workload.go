@@ -51,6 +51,7 @@ type Workload struct {
 	hotN   int
 	// latest
 	nextKey int
+	ackKey  int // 完了した insert までのキー (YCSB の AcknowledgedCounterGenerator と同じく、read は完了済みのキーだけを選ぶ)
 	// rmw: クライアントごとに保留中の write
 	pending map[int]int
 	last    map[int]lastOp
@@ -128,7 +129,7 @@ func NewYCSB(name string, N int, rng *rand.Rand) (*Workload, error) {
 		return wl, nil
 	case "ycsb-d":
 		_, cdf := zipfCDF(N, ycsbZipfConst)
-		wl := &Workload{N: N, Kind: WLLatest, ReadRatio: 0.95, cdf: cdf, nextKey: N}
+		wl := &Workload{N: N, Kind: WLLatest, ReadRatio: 0.95, cdf: cdf, nextKey: N, ackKey: N}
 		wl.Weights = make([]float64, N)
 		wl.refreshLatestWeights()
 		return wl, nil
@@ -136,10 +137,13 @@ func NewYCSB(name string, N int, rng *rand.Rand) (*Workload, error) {
 	return nil, fmt.Errorf("unknown workload %q", name)
 }
 
+// Ack: それまでに発行した insert が完了した (バッチの開始時に呼ぶ)。
+func (wl *Workload) Ack() { wl.ackKey = wl.nextKey }
+
 func (wl *Workload) refreshLatestWeights() {
 	prev := 0.0
 	for r := 0; r < wl.N; r++ {
-		a := ((wl.nextKey-1-r)%wl.N + wl.N) % wl.N
+		a := ((wl.ackKey-1-r)%wl.N + wl.N) % wl.N
 		wl.Weights[a] = wl.cdf[r] - prev
 		prev = wl.cdf[r]
 	}
@@ -202,7 +206,7 @@ func (wl *Workload) NextFor(client int, rng *rand.Rand) (addr int, write bool) {
 		if r >= wl.N {
 			r = wl.N - 1
 		}
-		addr = ((wl.nextKey-1-r)%wl.N + wl.N) % wl.N
+		addr = ((wl.ackKey-1-r)%wl.N + wl.N) % wl.N
 	default:
 		addr = sort.SearchFloat64s(wl.cdf, rng.Float64())
 		if addr >= wl.N {

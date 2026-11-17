@@ -1,0 +1,24 @@
+2026/11/17 13:59:45 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 1000/20000 elapsed 15s
+2026/11/17 13:59:59 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 2000/20000 elapsed 29s
+2026/11/17 14:00:15 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 3000/20000 elapsed 45s
+2026/11/17 14:00:30 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 4000/20000 elapsed 59s
+2026/11/17 14:00:44 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 5000/20000 elapsed 1m14s
+2026/11/17 14:00:59 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 6000/20000 elapsed 1m29s
+2026/11/17 14:01:13 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 7000/20000 elapsed 1m43s
+2026/11/17 14:01:27 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 8000/20000 elapsed 1m57s
+2026/11/17 14:01:42 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 9000/20000 elapsed 2m12s
+2026/11/17 14:01:56 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 10000/20000 elapsed 2m26s
+2026/11/17 14:02:11 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 11000/20000 elapsed 2m41s
+2026/11/17 14:02:25 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 12000/20000 elapsed 2m55s
+2026/11/17 14:02:39 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 13000/20000 elapsed 3m9s
+2026/11/17 14:02:53 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 14000/20000 elapsed 3m23s
+2026/11/17 14:03:07 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 15000/20000 elapsed 3m37s
+2026/11/17 14:03:22 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 16000/20000 elapsed 3m52s
+2026/11/17 14:03:37 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 17000/20000 elapsed 4m7s
+2026/11/17 14:03:51 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 18000/20000 elapsed 4m21s
+2026/11/17 14:04:06 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 19000/20000 elapsed 4m36s
+2026/11/17 14:04:20 cape-stash_hotspot_c15_L10_N2047_freq_rmax4 round 20000/20000 elapsed 4m50s
+2026/11/17 14:04:20 PAIR cape-stash_hotspot_c15_L10_N2047_freq_rmax4 empirical_tv_lca=0.2874 same_addr_pairs=3122 diff_addr_pairs=1956808
+2026/11/17 14:04:20 COST cape-stash_hotspot_c15_L10_N2047_freq_rmax4 tv_K=0.0119 stash_blocks_per_real=1204.4 path_blocks_per_real=145.8 evict_blocks_per_real=124.3 log_entries_per_real=981.7 total_blocks_per_real=1474.5 timesteps_per_real=1
+2026/11/17 14:04:20 SUMMARY cape-stash_hotspot_c15_L10_N2047_freq_rmax4 tv_lca_uniform=0.5257 tv_lca_workload=0.3405 tv_leaf_uniform=0.4102 tv_leaf_workload=0.1572 snapshots=10
+2026/11/17 14:04:20 done cape-stash_hotspot_c15_L10_N2047_freq_rmax4 in 4m50s

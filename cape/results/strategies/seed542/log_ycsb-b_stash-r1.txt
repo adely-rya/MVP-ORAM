@@ -1,0 +1,24 @@
+2026/11/17 14:04:03 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 1000/20000 elapsed 9s
+2026/11/17 14:04:12 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 2000/20000 elapsed 19s
+2026/11/17 14:04:21 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 3000/20000 elapsed 28s
+2026/11/17 14:04:31 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 4000/20000 elapsed 37s
+2026/11/17 14:04:40 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 5000/20000 elapsed 47s
+2026/11/17 14:04:50 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 6000/20000 elapsed 56s
+2026/11/17 14:04:59 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 7000/20000 elapsed 1m6s
+2026/11/17 14:05:10 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 8000/20000 elapsed 1m16s
+2026/11/17 14:05:19 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 9000/20000 elapsed 1m26s
+2026/11/17 14:05:29 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 10000/20000 elapsed 1m36s
+2026/11/17 14:05:38 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 11000/20000 elapsed 1m45s
+2026/11/17 14:05:47 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 12000/20000 elapsed 1m54s
+2026/11/17 14:05:57 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 13000/20000 elapsed 2m3s
+2026/11/17 14:06:05 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 14000/20000 elapsed 2m12s
+2026/11/17 14:06:15 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 15000/20000 elapsed 2m21s
+2026/11/17 14:06:24 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 16000/20000 elapsed 2m31s
+2026/11/17 14:06:33 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 17000/20000 elapsed 2m40s
+2026/11/17 14:06:42 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 18000/20000 elapsed 2m49s
+2026/11/17 14:06:51 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 19000/20000 elapsed 2m58s
+2026/11/17 14:07:00 cape-stash_ycsb-b_c15_L10_N2047_rmax1 round 20000/20000 elapsed 3m7s
+2026/11/17 14:07:00 PAIR cape-stash_ycsb-b_c15_L10_N2047_rmax1 empirical_tv_lca=0.0395 same_addr_pairs=45087 diff_addr_pairs=1914843
+2026/11/17 14:07:00 COST cape-stash_ycsb-b_c15_L10_N2047_rmax1 tv_K=0.0188 stash_blocks_per_real=712.4 path_blocks_per_real=136.5 evict_blocks_per_real=91.5 log_entries_per_real=873.6 total_blocks_per_real=940.4 timesteps_per_real=1
+2026/11/17 14:07:00 SUMMARY cape-stash_ycsb-b_c15_L10_N2047_rmax1 tv_lca_uniform=0.7499 tv_lca_workload=0.3863 tv_leaf_uniform=0.5899 tv_leaf_workload=0.2207 snapshots=10
+2026/11/17 14:07:00 done cape-stash_ycsb-b_c15_L10_N2047_rmax1 in 3m7s

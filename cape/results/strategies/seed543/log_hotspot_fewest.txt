@@ -1,0 +1,24 @@
+2026/11/17 14:10:34 cape_hotspot_c15_L10_N2047_rmax4 round 1000/20000 elapsed 15s
+2026/11/17 14:10:50 cape_hotspot_c15_L10_N2047_rmax4 round 2000/20000 elapsed 30s
+2026/11/17 14:11:07 cape_hotspot_c15_L10_N2047_rmax4 round 3000/20000 elapsed 47s
+2026/11/17 14:11:22 cape_hotspot_c15_L10_N2047_rmax4 round 4000/20000 elapsed 1m2s
+2026/11/17 14:11:37 cape_hotspot_c15_L10_N2047_rmax4 round 5000/20000 elapsed 1m17s
+2026/11/17 14:11:52 cape_hotspot_c15_L10_N2047_rmax4 round 6000/20000 elapsed 1m32s
+2026/11/17 14:12:07 cape_hotspot_c15_L10_N2047_rmax4 round 7000/20000 elapsed 1m47s
+2026/11/17 14:12:22 cape_hotspot_c15_L10_N2047_rmax4 round 8000/20000 elapsed 2m2s
+2026/11/17 14:12:37 cape_hotspot_c15_L10_N2047_rmax4 round 9000/20000 elapsed 2m17s
+2026/11/17 14:12:52 cape_hotspot_c15_L10_N2047_rmax4 round 10000/20000 elapsed 2m32s
+2026/11/17 14:13:07 cape_hotspot_c15_L10_N2047_rmax4 round 11000/20000 elapsed 2m47s
+2026/11/17 14:13:23 cape_hotspot_c15_L10_N2047_rmax4 round 12000/20000 elapsed 3m3s
+2026/11/17 14:13:37 cape_hotspot_c15_L10_N2047_rmax4 round 13000/20000 elapsed 3m18s
+2026/11/17 14:13:52 cape_hotspot_c15_L10_N2047_rmax4 round 14000/20000 elapsed 3m32s
+2026/11/17 14:14:07 cape_hotspot_c15_L10_N2047_rmax4 round 15000/20000 elapsed 3m47s
+2026/11/17 14:14:22 cape_hotspot_c15_L10_N2047_rmax4 round 16000/20000 elapsed 4m2s
+2026/11/17 14:14:36 cape_hotspot_c15_L10_N2047_rmax4 round 17000/20000 elapsed 4m16s
+2026/11/17 14:14:51 cape_hotspot_c15_L10_N2047_rmax4 round 18000/20000 elapsed 4m31s
+2026/11/17 14:15:06 cape_hotspot_c15_L10_N2047_rmax4 round 19000/20000 elapsed 4m46s
+2026/11/17 14:15:21 cape_hotspot_c15_L10_N2047_rmax4 round 20000/20000 elapsed 5m1s
+2026/11/17 14:15:21 PAIR cape_hotspot_c15_L10_N2047_rmax4 empirical_tv_lca=0.7112 same_addr_pairs=3092 diff_addr_pairs=1956838
+2026/11/17 14:15:21 COST cape_hotspot_c15_L10_N2047_rmax4 tv_K=0.0609 stash_blocks_per_real=1200.0 path_blocks_per_real=130.2 evict_blocks_per_real=124.0 log_entries_per_real=880.4 total_blocks_per_real=1454.1 timesteps_per_real=1
+2026/11/17 14:15:21 SUMMARY cape_hotspot_c15_L10_N2047_rmax4 tv_lca_uniform=0.8838 tv_lca_workload=0.7403 tv_leaf_uniform=0.7385 tv_leaf_workload=0.4413 snapshots=10
+2026/11/17 14:15:21 done cape_hotspot_c15_L10_N2047_rmax4 in 5m1s

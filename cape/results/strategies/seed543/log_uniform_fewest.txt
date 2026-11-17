@@ -1,0 +1,24 @@
+2026/11/17 14:08:57 cape_uniform_c15_L10_N2047_rmax4 round 1000/20000 elapsed 16s
+2026/11/17 14:09:12 cape_uniform_c15_L10_N2047_rmax4 round 2000/20000 elapsed 32s
+2026/11/17 14:09:28 cape_uniform_c15_L10_N2047_rmax4 round 3000/20000 elapsed 48s
+2026/11/17 14:09:44 cape_uniform_c15_L10_N2047_rmax4 round 4000/20000 elapsed 1m3s
+2026/11/17 14:09:59 cape_uniform_c15_L10_N2047_rmax4 round 5000/20000 elapsed 1m18s
+2026/11/17 14:10:14 cape_uniform_c15_L10_N2047_rmax4 round 6000/20000 elapsed 1m34s
+2026/11/17 14:10:29 cape_uniform_c15_L10_N2047_rmax4 round 7000/20000 elapsed 1m48s
+2026/11/17 14:10:44 cape_uniform_c15_L10_N2047_rmax4 round 8000/20000 elapsed 2m4s
+2026/11/17 14:11:00 cape_uniform_c15_L10_N2047_rmax4 round 9000/20000 elapsed 2m20s
+2026/11/17 14:11:16 cape_uniform_c15_L10_N2047_rmax4 round 10000/20000 elapsed 2m35s
+2026/11/17 14:11:31 cape_uniform_c15_L10_N2047_rmax4 round 11000/20000 elapsed 2m51s
+2026/11/17 14:11:47 cape_uniform_c15_L10_N2047_rmax4 round 12000/20000 elapsed 3m6s
+2026/11/17 14:12:02 cape_uniform_c15_L10_N2047_rmax4 round 13000/20000 elapsed 3m21s
+2026/11/17 14:12:17 cape_uniform_c15_L10_N2047_rmax4 round 14000/20000 elapsed 3m37s
+2026/11/17 14:12:33 cape_uniform_c15_L10_N2047_rmax4 round 15000/20000 elapsed 3m52s
+2026/11/17 14:12:48 cape_uniform_c15_L10_N2047_rmax4 round 16000/20000 elapsed 4m8s
+2026/11/17 14:13:04 cape_uniform_c15_L10_N2047_rmax4 round 17000/20000 elapsed 4m23s
+2026/11/17 14:13:19 cape_uniform_c15_L10_N2047_rmax4 round 18000/20000 elapsed 4m39s
+2026/11/17 14:13:35 cape_uniform_c15_L10_N2047_rmax4 round 19000/20000 elapsed 4m55s
+2026/11/17 14:13:50 cape_uniform_c15_L10_N2047_rmax4 round 20000/20000 elapsed 5m10s
+2026/11/17 14:13:50 PAIR cape_uniform_c15_L10_N2047_rmax4 empirical_tv_lca=0.8745 same_addr_pairs=984 diff_addr_pairs=1958946
+2026/11/17 14:13:50 COST cape_uniform_c15_L10_N2047_rmax4 tv_K=0.0369 stash_blocks_per_real=1411.7 path_blocks_per_real=132.8 evict_blocks_per_real=138.1 log_entries_per_real=903.3 total_blocks_per_real=1682.7 timesteps_per_real=1
+2026/11/17 14:13:50 SUMMARY cape_uniform_c15_L10_N2047_rmax4 tv_lca_uniform=0.8714 tv_lca_workload=0.8714 tv_leaf_uniform=0.6418 tv_leaf_workload=0.6418 snapshots=10
+2026/11/17 14:13:50 done cape_uniform_c15_L10_N2047_rmax4 in 5m10s

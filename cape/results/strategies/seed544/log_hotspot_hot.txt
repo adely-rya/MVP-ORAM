@@ -1,0 +1,24 @@
+2026/11/17 14:20:43 cape-hot_hotspot_c15_L10_N2047_rmax4 round 1000/20000 elapsed 13s
+2026/11/17 14:20:56 cape-hot_hotspot_c15_L10_N2047_rmax4 round 2000/20000 elapsed 27s
+2026/11/17 14:21:09 cape-hot_hotspot_c15_L10_N2047_rmax4 round 3000/20000 elapsed 39s
+2026/11/17 14:21:22 cape-hot_hotspot_c15_L10_N2047_rmax4 round 4000/20000 elapsed 52s
+2026/11/17 14:21:35 cape-hot_hotspot_c15_L10_N2047_rmax4 round 5000/20000 elapsed 1m6s
+2026/11/17 14:21:48 cape-hot_hotspot_c15_L10_N2047_rmax4 round 6000/20000 elapsed 1m19s
+2026/11/17 14:22:02 cape-hot_hotspot_c15_L10_N2047_rmax4 round 7000/20000 elapsed 1m32s
+2026/11/17 14:22:15 cape-hot_hotspot_c15_L10_N2047_rmax4 round 8000/20000 elapsed 1m45s
+2026/11/17 14:22:28 cape-hot_hotspot_c15_L10_N2047_rmax4 round 9000/20000 elapsed 1m58s
+2026/11/17 14:22:41 cape-hot_hotspot_c15_L10_N2047_rmax4 round 10000/20000 elapsed 2m11s
+2026/11/17 14:22:54 cape-hot_hotspot_c15_L10_N2047_rmax4 round 11000/20000 elapsed 2m25s
+2026/11/17 14:23:08 cape-hot_hotspot_c15_L10_N2047_rmax4 round 12000/20000 elapsed 2m38s
+2026/11/17 14:23:21 cape-hot_hotspot_c15_L10_N2047_rmax4 round 13000/20000 elapsed 2m51s
+2026/11/17 14:23:34 cape-hot_hotspot_c15_L10_N2047_rmax4 round 14000/20000 elapsed 3m4s
+2026/11/17 14:23:47 cape-hot_hotspot_c15_L10_N2047_rmax4 round 15000/20000 elapsed 3m17s
+2026/11/17 14:24:00 cape-hot_hotspot_c15_L10_N2047_rmax4 round 16000/20000 elapsed 3m30s
+2026/11/17 14:24:14 cape-hot_hotspot_c15_L10_N2047_rmax4 round 17000/20000 elapsed 3m44s
+2026/11/17 14:24:27 cape-hot_hotspot_c15_L10_N2047_rmax4 round 18000/20000 elapsed 3m57s
+2026/11/17 14:24:41 cape-hot_hotspot_c15_L10_N2047_rmax4 round 19000/20000 elapsed 4m11s
+2026/11/17 14:24:55 cape-hot_hotspot_c15_L10_N2047_rmax4 round 20000/20000 elapsed 4m25s
+2026/11/17 14:24:55 PAIR cape-hot_hotspot_c15_L10_N2047_rmax4 empirical_tv_lca=0.7088 same_addr_pairs=3152 diff_addr_pairs=1956778
+2026/11/17 14:24:55 COST cape-hot_hotspot_c15_L10_N2047_rmax4 tv_K=0.0374 stash_blocks_per_real=1254.0 path_blocks_per_real=138.2 evict_blocks_per_real=127.6 log_entries_per_real=924.8 total_blocks_per_real=1519.7 timesteps_per_real=1
+2026/11/17 14:24:55 SUMMARY cape-hot_hotspot_c15_L10_N2047_rmax4 tv_lca_uniform=0.8581 tv_lca_workload=0.7478 tv_leaf_uniform=0.4099 tv_leaf_workload=0.2679 snapshots=10
+2026/11/17 14:24:55 done cape-hot_hotspot_c15_L10_N2047_rmax4 in 4m25s

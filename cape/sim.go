@@ -105,6 +105,7 @@ func (s *Sim) Round() RoundStats {
 		s.batchOps = make([]Op, c)
 		s.batchTau = make([]int, c)
 		count := map[int]int{}
+		s.wl.Ack()
 		for _, i := range s.rng.Perm(c) {
 			addr, write := s.wl.NextFor(i, s.rng)
 			for s.wl.Distinct && count[addr] > 0 && !s.wl.pendingRMW(i) {

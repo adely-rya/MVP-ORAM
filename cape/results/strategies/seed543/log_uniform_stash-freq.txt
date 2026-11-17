@@ -1,0 +1,24 @@
+2026/11/17 14:08:30 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 1000/20000 elapsed 14s
+2026/11/17 14:08:45 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 2000/20000 elapsed 29s
+2026/11/17 14:09:00 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 3000/20000 elapsed 44s
+2026/11/17 14:09:15 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 4000/20000 elapsed 59s
+2026/11/17 14:09:31 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 5000/20000 elapsed 1m15s
+2026/11/17 14:09:46 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 6000/20000 elapsed 1m30s
+2026/11/17 14:10:01 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 7000/20000 elapsed 1m45s
+2026/11/17 14:10:16 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 8000/20000 elapsed 2m0s
+2026/11/17 14:10:29 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 9000/20000 elapsed 2m13s
+2026/11/17 14:10:44 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 10000/20000 elapsed 2m28s
+2026/11/17 14:11:00 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 11000/20000 elapsed 2m44s
+2026/11/17 14:11:15 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 12000/20000 elapsed 3m0s
+2026/11/17 14:11:30 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 13000/20000 elapsed 3m14s
+2026/11/17 14:11:44 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 14000/20000 elapsed 3m28s
+2026/11/17 14:11:59 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 15000/20000 elapsed 3m43s
+2026/11/17 14:12:14 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 16000/20000 elapsed 3m58s
+2026/11/17 14:12:29 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 17000/20000 elapsed 4m13s
+2026/11/17 14:12:43 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 18000/20000 elapsed 4m27s
+2026/11/17 14:12:59 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 19000/20000 elapsed 4m43s
+2026/11/17 14:13:14 cape-stash_uniform_c15_L10_N2047_freq_rmax4 round 20000/20000 elapsed 4m58s
+2026/11/17 14:13:14 PAIR cape-stash_uniform_c15_L10_N2047_freq_rmax4 empirical_tv_lca=0.4942 same_addr_pairs=984 diff_addr_pairs=1958946
+2026/11/17 14:13:14 COST cape-stash_uniform_c15_L10_N2047_freq_rmax4 tv_K=0.0149 stash_blocks_per_real=1412.7 path_blocks_per_real=145.8 evict_blocks_per_real=138.2 log_entries_per_real=981.3 total_blocks_per_real=1696.7 timesteps_per_real=1
+2026/11/17 14:13:14 SUMMARY cape-stash_uniform_c15_L10_N2047_freq_rmax4 tv_lca_uniform=0.5157 tv_lca_workload=0.5157 tv_leaf_uniform=0.3283 tv_leaf_workload=0.3283 snapshots=10
+2026/11/17 14:13:14 done cape-stash_uniform_c15_L10_N2047_freq_rmax4 in 4m58s

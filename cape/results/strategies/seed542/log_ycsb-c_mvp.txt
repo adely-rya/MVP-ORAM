@@ -1,0 +1,24 @@
+2026/11/17 14:04:05 mvp_ycsb-c_c15_L10_N2047 round 1000/20000 elapsed 2s
+2026/11/17 14:04:07 mvp_ycsb-c_c15_L10_N2047 round 2000/20000 elapsed 5s
+2026/11/17 14:04:09 mvp_ycsb-c_c15_L10_N2047 round 3000/20000 elapsed 7s
+2026/11/17 14:04:11 mvp_ycsb-c_c15_L10_N2047 round 4000/20000 elapsed 9s
+2026/11/17 14:04:14 mvp_ycsb-c_c15_L10_N2047 round 5000/20000 elapsed 11s
+2026/11/17 14:04:16 mvp_ycsb-c_c15_L10_N2047 round 6000/20000 elapsed 13s
+2026/11/17 14:04:18 mvp_ycsb-c_c15_L10_N2047 round 7000/20000 elapsed 16s
+2026/11/17 14:04:20 mvp_ycsb-c_c15_L10_N2047 round 8000/20000 elapsed 18s
+2026/11/17 14:04:22 mvp_ycsb-c_c15_L10_N2047 round 9000/20000 elapsed 20s
+2026/11/17 14:04:25 mvp_ycsb-c_c15_L10_N2047 round 10000/20000 elapsed 22s
+2026/11/17 14:04:27 mvp_ycsb-c_c15_L10_N2047 round 11000/20000 elapsed 24s
+2026/11/17 14:04:29 mvp_ycsb-c_c15_L10_N2047 round 12000/20000 elapsed 26s
+2026/11/17 14:04:31 mvp_ycsb-c_c15_L10_N2047 round 13000/20000 elapsed 28s
+2026/11/17 14:04:33 mvp_ycsb-c_c15_L10_N2047 round 14000/20000 elapsed 31s
+2026/11/17 14:04:35 mvp_ycsb-c_c15_L10_N2047 round 15000/20000 elapsed 33s
+2026/11/17 14:04:37 mvp_ycsb-c_c15_L10_N2047 round 16000/20000 elapsed 35s
+2026/11/17 14:04:40 mvp_ycsb-c_c15_L10_N2047 round 17000/20000 elapsed 37s
+2026/11/17 14:04:42 mvp_ycsb-c_c15_L10_N2047 round 18000/20000 elapsed 40s
+2026/11/17 14:04:44 mvp_ycsb-c_c15_L10_N2047 round 19000/20000 elapsed 42s
+2026/11/17 14:04:46 mvp_ycsb-c_c15_L10_N2047 round 20000/20000 elapsed 44s
+2026/11/17 14:04:46 PAIR mvp_ycsb-c_c15_L10_N2047 empirical_tv_lca=0.0694 same_addr_pairs=45087 diff_addr_pairs=1914843
+2026/11/17 14:04:46 COST mvp_ycsb-c_c15_L10_N2047 tv_K=0.0612 stash_blocks_per_real=697.4 path_blocks_per_real=78.7 evict_blocks_per_real=90.5 log_entries_per_real=389.1 total_blocks_per_real=866.6 timesteps_per_real=1
+2026/11/17 14:04:46 SUMMARY mvp_ycsb-c_c15_L10_N2047 tv_lca_uniform=0.9583 tv_lca_workload=0.5908 tv_leaf_uniform=0.8298 tv_leaf_workload=0.3987 snapshots=10
+2026/11/17 14:04:46 done mvp_ycsb-c_c15_L10_N2047 in 44s

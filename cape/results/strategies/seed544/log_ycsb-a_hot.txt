@@ -1,0 +1,24 @@
+2026/11/17 14:22:01 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 1000/20000 elapsed 11s
+2026/11/17 14:22:12 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 2000/20000 elapsed 21s
+2026/11/17 14:22:23 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 3000/20000 elapsed 33s
+2026/11/17 14:22:33 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 4000/20000 elapsed 43s
+2026/11/17 14:22:45 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 5000/20000 elapsed 54s
+2026/11/17 14:22:56 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 6000/20000 elapsed 1m5s
+2026/11/17 14:23:07 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 7000/20000 elapsed 1m17s
+2026/11/17 14:23:18 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 8000/20000 elapsed 1m28s
+2026/11/17 14:23:29 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 9000/20000 elapsed 1m39s
+2026/11/17 14:23:40 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 10000/20000 elapsed 1m50s
+2026/11/17 14:23:52 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 11000/20000 elapsed 2m1s
+2026/11/17 14:24:03 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 12000/20000 elapsed 2m13s
+2026/11/17 14:24:14 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 13000/20000 elapsed 2m23s
+2026/11/17 14:24:24 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 14000/20000 elapsed 2m34s
+2026/11/17 14:24:36 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 15000/20000 elapsed 2m46s
+2026/11/17 14:24:48 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 16000/20000 elapsed 2m58s
+2026/11/17 14:24:59 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 17000/20000 elapsed 3m9s
+2026/11/17 14:25:10 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 18000/20000 elapsed 3m20s
+2026/11/17 14:25:21 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 19000/20000 elapsed 3m31s
+2026/11/17 14:25:32 cape-hot_ycsb-a_c15_L10_N2047_rmax4 round 20000/20000 elapsed 3m42s
+2026/11/17 14:25:32 PAIR cape-hot_ycsb-a_c15_L10_N2047_rmax4 empirical_tv_lca=0.0521 same_addr_pairs=45902 diff_addr_pairs=1914028
+2026/11/17 14:25:32 COST cape-hot_ycsb-a_c15_L10_N2047_rmax4 tv_K=0.0269 stash_blocks_per_real=726.5 path_blocks_per_real=136.4 evict_blocks_per_real=92.4 log_entries_per_real=867.5 total_blocks_per_real=955.3 timesteps_per_real=1
+2026/11/17 14:25:32 SUMMARY cape-hot_ycsb-a_c15_L10_N2047_rmax4 tv_lca_uniform=0.8792 tv_lca_workload=0.5086 tv_leaf_uniform=0.4790 tv_leaf_workload=0.2199 snapshots=10
+2026/11/17 14:25:32 done cape-hot_ycsb-a_c15_L10_N2047_rmax4 in 3m42s

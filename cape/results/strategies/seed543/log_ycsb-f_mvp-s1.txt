@@ -1,0 +1,44 @@
+2026/11/17 14:17:08 mvp_ycsb-f_c15_L10_N2047_sigma1 round 1000/40000 elapsed 2s
+2026/11/17 14:17:09 mvp_ycsb-f_c15_L10_N2047_sigma1 round 2000/40000 elapsed 3s
+2026/11/17 14:17:11 mvp_ycsb-f_c15_L10_N2047_sigma1 round 3000/40000 elapsed 5s
+2026/11/17 14:17:12 mvp_ycsb-f_c15_L10_N2047_sigma1 round 4000/40000 elapsed 6s
+2026/11/17 14:17:14 mvp_ycsb-f_c15_L10_N2047_sigma1 round 5000/40000 elapsed 8s
+2026/11/17 14:17:15 mvp_ycsb-f_c15_L10_N2047_sigma1 round 6000/40000 elapsed 9s
+2026/11/17 14:17:17 mvp_ycsb-f_c15_L10_N2047_sigma1 round 7000/40000 elapsed 11s
+2026/11/17 14:17:18 mvp_ycsb-f_c15_L10_N2047_sigma1 round 8000/40000 elapsed 12s
+2026/11/17 14:17:20 mvp_ycsb-f_c15_L10_N2047_sigma1 round 9000/40000 elapsed 13s
+2026/11/17 14:17:21 mvp_ycsb-f_c15_L10_N2047_sigma1 round 10000/40000 elapsed 15s
+2026/11/17 14:17:23 mvp_ycsb-f_c15_L10_N2047_sigma1 round 11000/40000 elapsed 17s
+2026/11/17 14:17:24 mvp_ycsb-f_c15_L10_N2047_sigma1 round 12000/40000 elapsed 18s
+2026/11/17 14:17:26 mvp_ycsb-f_c15_L10_N2047_sigma1 round 13000/40000 elapsed 20s
+2026/11/17 14:17:27 mvp_ycsb-f_c15_L10_N2047_sigma1 round 14000/40000 elapsed 21s
+2026/11/17 14:17:29 mvp_ycsb-f_c15_L10_N2047_sigma1 round 15000/40000 elapsed 23s
+2026/11/17 14:17:30 mvp_ycsb-f_c15_L10_N2047_sigma1 round 16000/40000 elapsed 24s
+2026/11/17 14:17:32 mvp_ycsb-f_c15_L10_N2047_sigma1 round 17000/40000 elapsed 26s
+2026/11/17 14:17:33 mvp_ycsb-f_c15_L10_N2047_sigma1 round 18000/40000 elapsed 27s
+2026/11/17 14:17:35 mvp_ycsb-f_c15_L10_N2047_sigma1 round 19000/40000 elapsed 29s
+2026/11/17 14:17:36 mvp_ycsb-f_c15_L10_N2047_sigma1 round 20000/40000 elapsed 30s
+2026/11/17 14:17:38 mvp_ycsb-f_c15_L10_N2047_sigma1 round 21000/40000 elapsed 32s
+2026/11/17 14:17:39 mvp_ycsb-f_c15_L10_N2047_sigma1 round 22000/40000 elapsed 33s
+2026/11/17 14:17:41 mvp_ycsb-f_c15_L10_N2047_sigma1 round 23000/40000 elapsed 35s
+2026/11/17 14:17:42 mvp_ycsb-f_c15_L10_N2047_sigma1 round 24000/40000 elapsed 36s
+2026/11/17 14:17:44 mvp_ycsb-f_c15_L10_N2047_sigma1 round 25000/40000 elapsed 38s
+2026/11/17 14:17:45 mvp_ycsb-f_c15_L10_N2047_sigma1 round 26000/40000 elapsed 39s
+2026/11/17 14:17:47 mvp_ycsb-f_c15_L10_N2047_sigma1 round 27000/40000 elapsed 40s
+2026/11/17 14:17:48 mvp_ycsb-f_c15_L10_N2047_sigma1 round 28000/40000 elapsed 42s
+2026/11/17 14:17:49 mvp_ycsb-f_c15_L10_N2047_sigma1 round 29000/40000 elapsed 43s
+2026/11/17 14:17:51 mvp_ycsb-f_c15_L10_N2047_sigma1 round 30000/40000 elapsed 45s
+2026/11/17 14:17:52 mvp_ycsb-f_c15_L10_N2047_sigma1 round 31000/40000 elapsed 46s
+2026/11/17 14:17:54 mvp_ycsb-f_c15_L10_N2047_sigma1 round 32000/40000 elapsed 47s
+2026/11/17 14:17:55 mvp_ycsb-f_c15_L10_N2047_sigma1 round 33000/40000 elapsed 49s
+2026/11/17 14:17:56 mvp_ycsb-f_c15_L10_N2047_sigma1 round 34000/40000 elapsed 50s
+2026/11/17 14:17:58 mvp_ycsb-f_c15_L10_N2047_sigma1 round 35000/40000 elapsed 52s
+2026/11/17 14:17:59 mvp_ycsb-f_c15_L10_N2047_sigma1 round 36000/40000 elapsed 53s
+2026/11/17 14:18:01 mvp_ycsb-f_c15_L10_N2047_sigma1 round 37000/40000 elapsed 55s
+2026/11/17 14:18:02 mvp_ycsb-f_c15_L10_N2047_sigma1 round 38000/40000 elapsed 56s
+2026/11/17 14:18:04 mvp_ycsb-f_c15_L10_N2047_sigma1 round 39000/40000 elapsed 57s
+2026/11/17 14:18:05 mvp_ycsb-f_c15_L10_N2047_sigma1 round 40000/40000 elapsed 59s
+2026/11/17 14:18:05 PAIR mvp_ycsb-f_c15_L10_N2047_sigma1 empirical_tv_lca=0.0597 same_addr_pairs=9831 diff_addr_pairs=1619317
+2026/11/17 14:18:05 COST mvp_ycsb-f_c15_L10_N2047_sigma1 tv_K=0.0043 stash_blocks_per_real=518.3 path_blocks_per_real=113.0 evict_blocks_per_real=122.6 log_entries_per_real=501.9 total_blocks_per_real=753.8 timesteps_per_real=2
+2026/11/17 14:18:05 SUMMARY mvp_ycsb-f_c15_L10_N2047_sigma1 tv_lca_uniform=0.0005 tv_lca_workload=0.0053 tv_leaf_uniform=0.0001 tv_leaf_workload=0.0001 snapshots=10
+2026/11/17 14:18:05 done mvp_ycsb-f_c15_L10_N2047_sigma1 in 59s

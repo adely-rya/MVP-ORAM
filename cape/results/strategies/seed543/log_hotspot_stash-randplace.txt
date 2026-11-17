@@ -1,0 +1,24 @@
+2026/11/17 14:10:10 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 1000/20000 elapsed 16s
+2026/11/17 14:10:24 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 2000/20000 elapsed 30s
+2026/11/17 14:10:39 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 3000/20000 elapsed 44s
+2026/11/17 14:10:54 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 4000/20000 elapsed 59s
+2026/11/17 14:11:10 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 5000/20000 elapsed 1m15s
+2026/11/17 14:11:25 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 6000/20000 elapsed 1m30s
+2026/11/17 14:11:39 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 7000/20000 elapsed 1m45s
+2026/11/17 14:11:54 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 8000/20000 elapsed 2m0s
+2026/11/17 14:12:09 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 9000/20000 elapsed 2m15s
+2026/11/17 14:12:24 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 10000/20000 elapsed 2m30s
+2026/11/17 14:12:40 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 11000/20000 elapsed 2m45s
+2026/11/17 14:12:55 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 12000/20000 elapsed 3m0s
+2026/11/17 14:13:11 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 13000/20000 elapsed 3m16s
+2026/11/17 14:13:26 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 14000/20000 elapsed 3m31s
+2026/11/17 14:13:41 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 15000/20000 elapsed 3m47s
+2026/11/17 14:13:56 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 16000/20000 elapsed 4m1s
+2026/11/17 14:14:11 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 17000/20000 elapsed 4m17s
+2026/11/17 14:14:26 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 18000/20000 elapsed 4m32s
+2026/11/17 14:14:41 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 19000/20000 elapsed 4m47s
+2026/11/17 14:14:57 cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 round 20000/20000 elapsed 5m2s
+2026/11/17 14:14:57 PAIR cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 empirical_tv_lca=0.3946 same_addr_pairs=3092 diff_addr_pairs=1956838
+2026/11/17 14:14:57 COST cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 tv_K=0.0232 stash_blocks_per_real=1186.5 path_blocks_per_real=145.9 evict_blocks_per_real=123.1 log_entries_per_real=978.3 total_blocks_per_real=1455.5 timesteps_per_real=1
+2026/11/17 14:14:57 SUMMARY cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 tv_lca_uniform=0.6052 tv_lca_workload=0.4452 tv_leaf_uniform=0.4774 tv_leaf_workload=0.2358 snapshots=10
+2026/11/17 14:14:57 done cape-stash_hotspot_c15_L10_N2047_placerandom_rmax4 in 5m2s

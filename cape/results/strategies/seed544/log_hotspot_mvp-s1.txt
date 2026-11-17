@@ -1,0 +1,44 @@
+2026/11/17 14:19:32 mvp_hotspot_c15_L10_N2047_sigma1 round 1000/40000 elapsed 2s
+2026/11/17 14:19:34 mvp_hotspot_c15_L10_N2047_sigma1 round 2000/40000 elapsed 4s
+2026/11/17 14:19:36 mvp_hotspot_c15_L10_N2047_sigma1 round 3000/40000 elapsed 6s
+2026/11/17 14:19:38 mvp_hotspot_c15_L10_N2047_sigma1 round 4000/40000 elapsed 8s
+2026/11/17 14:19:39 mvp_hotspot_c15_L10_N2047_sigma1 round 5000/40000 elapsed 10s
+2026/11/17 14:19:41 mvp_hotspot_c15_L10_N2047_sigma1 round 6000/40000 elapsed 12s
+2026/11/17 14:19:43 mvp_hotspot_c15_L10_N2047_sigma1 round 7000/40000 elapsed 13s
+2026/11/17 14:19:45 mvp_hotspot_c15_L10_N2047_sigma1 round 8000/40000 elapsed 15s
+2026/11/17 14:19:47 mvp_hotspot_c15_L10_N2047_sigma1 round 9000/40000 elapsed 17s
+2026/11/17 14:19:49 mvp_hotspot_c15_L10_N2047_sigma1 round 10000/40000 elapsed 19s
+2026/11/17 14:19:51 mvp_hotspot_c15_L10_N2047_sigma1 round 11000/40000 elapsed 21s
+2026/11/17 14:19:52 mvp_hotspot_c15_L10_N2047_sigma1 round 12000/40000 elapsed 22s
+2026/11/17 14:19:54 mvp_hotspot_c15_L10_N2047_sigma1 round 13000/40000 elapsed 24s
+2026/11/17 14:19:56 mvp_hotspot_c15_L10_N2047_sigma1 round 14000/40000 elapsed 26s
+2026/11/17 14:19:58 mvp_hotspot_c15_L10_N2047_sigma1 round 15000/40000 elapsed 28s
+2026/11/17 14:19:59 mvp_hotspot_c15_L10_N2047_sigma1 round 16000/40000 elapsed 30s
+2026/11/17 14:20:01 mvp_hotspot_c15_L10_N2047_sigma1 round 17000/40000 elapsed 31s
+2026/11/17 14:20:03 mvp_hotspot_c15_L10_N2047_sigma1 round 18000/40000 elapsed 33s
+2026/11/17 14:20:05 mvp_hotspot_c15_L10_N2047_sigma1 round 19000/40000 elapsed 35s
+2026/11/17 14:20:07 mvp_hotspot_c15_L10_N2047_sigma1 round 20000/40000 elapsed 37s
+2026/11/17 14:20:08 mvp_hotspot_c15_L10_N2047_sigma1 round 21000/40000 elapsed 38s
+2026/11/17 14:20:10 mvp_hotspot_c15_L10_N2047_sigma1 round 22000/40000 elapsed 40s
+2026/11/17 14:20:12 mvp_hotspot_c15_L10_N2047_sigma1 round 23000/40000 elapsed 42s
+2026/11/17 14:20:14 mvp_hotspot_c15_L10_N2047_sigma1 round 24000/40000 elapsed 44s
+2026/11/17 14:20:16 mvp_hotspot_c15_L10_N2047_sigma1 round 25000/40000 elapsed 46s
+2026/11/17 14:20:17 mvp_hotspot_c15_L10_N2047_sigma1 round 26000/40000 elapsed 47s
+2026/11/17 14:20:19 mvp_hotspot_c15_L10_N2047_sigma1 round 27000/40000 elapsed 49s
+2026/11/17 14:20:21 mvp_hotspot_c15_L10_N2047_sigma1 round 28000/40000 elapsed 51s
+2026/11/17 14:20:23 mvp_hotspot_c15_L10_N2047_sigma1 round 29000/40000 elapsed 53s
+2026/11/17 14:20:24 mvp_hotspot_c15_L10_N2047_sigma1 round 30000/40000 elapsed 55s
+2026/11/17 14:20:26 mvp_hotspot_c15_L10_N2047_sigma1 round 31000/40000 elapsed 56s
+2026/11/17 14:20:28 mvp_hotspot_c15_L10_N2047_sigma1 round 32000/40000 elapsed 58s
+2026/11/17 14:20:30 mvp_hotspot_c15_L10_N2047_sigma1 round 33000/40000 elapsed 1m0s
+2026/11/17 14:20:31 mvp_hotspot_c15_L10_N2047_sigma1 round 34000/40000 elapsed 1m2s
+2026/11/17 14:20:33 mvp_hotspot_c15_L10_N2047_sigma1 round 35000/40000 elapsed 1m4s
+2026/11/17 14:20:35 mvp_hotspot_c15_L10_N2047_sigma1 round 36000/40000 elapsed 1m5s
+2026/11/17 14:20:37 mvp_hotspot_c15_L10_N2047_sigma1 round 37000/40000 elapsed 1m7s
+2026/11/17 14:20:39 mvp_hotspot_c15_L10_N2047_sigma1 round 38000/40000 elapsed 1m9s
+2026/11/17 14:20:41 mvp_hotspot_c15_L10_N2047_sigma1 round 39000/40000 elapsed 1m11s
+2026/11/17 14:20:42 mvp_hotspot_c15_L10_N2047_sigma1 round 40000/40000 elapsed 1m13s
+2026/11/17 14:20:42 PAIR mvp_hotspot_c15_L10_N2047_sigma1 empirical_tv_lca=0.9272 same_addr_pairs=31 diff_addr_pairs=1918249
+2026/11/17 14:20:42 COST mvp_hotspot_c15_L10_N2047_sigma1 tv_K=0.0038 stash_blocks_per_real=890.5 path_blocks_per_real=156.0 evict_blocks_per_real=147.4 log_entries_per_real=670.5 total_blocks_per_real=1193.8 timesteps_per_real=2
+2026/11/17 14:20:42 SUMMARY mvp_hotspot_c15_L10_N2047_sigma1 tv_lca_uniform=0.0005 tv_lca_workload=0.0021 tv_leaf_uniform=0.0001 tv_leaf_workload=0.0001 snapshots=10
+2026/11/17 14:20:42 done mvp_hotspot_c15_L10_N2047_sigma1 in 1m13s

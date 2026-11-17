@@ -1,0 +1,24 @@
+2026/11/17 14:18:08 mvp_uniform_c15_L10_N2047 round 1000/20000 elapsed 3s
+2026/11/17 14:18:12 mvp_uniform_c15_L10_N2047 round 2000/20000 elapsed 6s
+2026/11/17 14:18:15 mvp_uniform_c15_L10_N2047 round 3000/20000 elapsed 9s
+2026/11/17 14:18:18 mvp_uniform_c15_L10_N2047 round 4000/20000 elapsed 13s
+2026/11/17 14:18:21 mvp_uniform_c15_L10_N2047 round 5000/20000 elapsed 16s
+2026/11/17 14:18:24 mvp_uniform_c15_L10_N2047 round 6000/20000 elapsed 19s
+2026/11/17 14:18:27 mvp_uniform_c15_L10_N2047 round 7000/20000 elapsed 22s
+2026/11/17 14:18:30 mvp_uniform_c15_L10_N2047 round 8000/20000 elapsed 25s
+2026/11/17 14:18:33 mvp_uniform_c15_L10_N2047 round 9000/20000 elapsed 28s
+2026/11/17 14:18:36 mvp_uniform_c15_L10_N2047 round 10000/20000 elapsed 31s
+2026/11/17 14:18:39 mvp_uniform_c15_L10_N2047 round 11000/20000 elapsed 34s
+2026/11/17 14:18:42 mvp_uniform_c15_L10_N2047 round 12000/20000 elapsed 37s
+2026/11/17 14:18:45 mvp_uniform_c15_L10_N2047 round 13000/20000 elapsed 40s
+2026/11/17 14:18:48 mvp_uniform_c15_L10_N2047 round 14000/20000 elapsed 43s
+2026/11/17 14:18:51 mvp_uniform_c15_L10_N2047 round 15000/20000 elapsed 46s
+2026/11/17 14:18:54 mvp_uniform_c15_L10_N2047 round 16000/20000 elapsed 49s
+2026/11/17 14:18:58 mvp_uniform_c15_L10_N2047 round 17000/20000 elapsed 52s
+2026/11/17 14:19:01 mvp_uniform_c15_L10_N2047 round 18000/20000 elapsed 56s
+2026/11/17 14:19:04 mvp_uniform_c15_L10_N2047 round 19000/20000 elapsed 59s
+2026/11/17 14:19:07 mvp_uniform_c15_L10_N2047 round 20000/20000 elapsed 1m2s
+2026/11/17 14:19:07 PAIR mvp_uniform_c15_L10_N2047 empirical_tv_lca=0.9324 same_addr_pairs=972 diff_addr_pairs=1958958
+2026/11/17 14:19:07 COST mvp_uniform_c15_L10_N2047 tv_K=0.0468 stash_blocks_per_real=1406.7 path_blocks_per_real=85.7 evict_blocks_per_real=137.8 log_entries_per_real=506.1 total_blocks_per_real=1630.2 timesteps_per_real=1
+2026/11/17 14:19:07 SUMMARY mvp_uniform_c15_L10_N2047 tv_lca_uniform=0.9306 tv_lca_workload=0.9306 tv_leaf_uniform=0.7740 tv_leaf_workload=0.7740 snapshots=10
+2026/11/17 14:19:07 done mvp_uniform_c15_L10_N2047 in 1m2s

@@ -43,6 +43,7 @@ func TestYCSBWorkloads(t *testing.T) {
 	wl, _ = NewYCSB("ycsb-d", N, rng)
 	for i := 0; i < 3000; i++ {
 		wl.NextFor(0, rng)
+		wl.Ack()
 	}
 	w := wl.CurrentWeights()
 	best := 0

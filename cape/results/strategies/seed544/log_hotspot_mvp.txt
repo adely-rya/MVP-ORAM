@@ -1,0 +1,24 @@
+2026/11/17 14:19:12 mvp_hotspot_c15_L10_N2047 round 1000/20000 elapsed 3s
+2026/11/17 14:19:15 mvp_hotspot_c15_L10_N2047 round 2000/20000 elapsed 6s
+2026/11/17 14:19:18 mvp_hotspot_c15_L10_N2047 round 3000/20000 elapsed 9s
+2026/11/17 14:19:20 mvp_hotspot_c15_L10_N2047 round 4000/20000 elapsed 11s
+2026/11/17 14:19:23 mvp_hotspot_c15_L10_N2047 round 5000/20000 elapsed 14s
+2026/11/17 14:19:26 mvp_hotspot_c15_L10_N2047 round 6000/20000 elapsed 17s
+2026/11/17 14:19:28 mvp_hotspot_c15_L10_N2047 round 7000/20000 elapsed 19s
+2026/11/17 14:19:31 mvp_hotspot_c15_L10_N2047 round 8000/20000 elapsed 22s
+2026/11/17 14:19:34 mvp_hotspot_c15_L10_N2047 round 9000/20000 elapsed 25s
+2026/11/17 14:19:37 mvp_hotspot_c15_L10_N2047 round 10000/20000 elapsed 28s
+2026/11/17 14:19:40 mvp_hotspot_c15_L10_N2047 round 11000/20000 elapsed 31s
+2026/11/17 14:19:42 mvp_hotspot_c15_L10_N2047 round 12000/20000 elapsed 34s
+2026/11/17 14:19:45 mvp_hotspot_c15_L10_N2047 round 13000/20000 elapsed 36s
+2026/11/17 14:19:48 mvp_hotspot_c15_L10_N2047 round 14000/20000 elapsed 39s
+2026/11/17 14:19:51 mvp_hotspot_c15_L10_N2047 round 15000/20000 elapsed 42s
+2026/11/17 14:19:54 mvp_hotspot_c15_L10_N2047 round 16000/20000 elapsed 45s
+2026/11/17 14:19:57 mvp_hotspot_c15_L10_N2047 round 17000/20000 elapsed 48s
+2026/11/17 14:20:00 mvp_hotspot_c15_L10_N2047 round 18000/20000 elapsed 51s
+2026/11/17 14:20:02 mvp_hotspot_c15_L10_N2047 round 19000/20000 elapsed 53s
+2026/11/17 14:20:05 mvp_hotspot_c15_L10_N2047 round 20000/20000 elapsed 56s
+2026/11/17 14:20:05 PAIR mvp_hotspot_c15_L10_N2047 empirical_tv_lca=0.8049 same_addr_pairs=3152 diff_addr_pairs=1956778
+2026/11/17 14:20:05 COST mvp_hotspot_c15_L10_N2047 tv_K=0.0972 stash_blocks_per_real=1188.0 path_blocks_per_real=83.7 evict_blocks_per_real=123.2 log_entries_per_real=477.9 total_blocks_per_real=1395.0 timesteps_per_real=1
+2026/11/17 14:20:05 SUMMARY mvp_hotspot_c15_L10_N2047 tv_lca_uniform=0.9387 tv_lca_workload=0.8282 tv_leaf_uniform=0.8177 tv_leaf_workload=0.5746 snapshots=10
+2026/11/17 14:20:05 done mvp_hotspot_c15_L10_N2047 in 56s

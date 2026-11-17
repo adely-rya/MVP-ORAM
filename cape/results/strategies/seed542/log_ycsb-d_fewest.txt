@@ -1,0 +1,24 @@
+2026/11/17 14:06:27 cape_ycsb-d_c15_L10_N2047_rmax4 round 1000/20000 elapsed 13s
+2026/11/17 14:06:39 cape_ycsb-d_c15_L10_N2047_rmax4 round 2000/20000 elapsed 25s
+2026/11/17 14:06:50 cape_ycsb-d_c15_L10_N2047_rmax4 round 3000/20000 elapsed 37s
+2026/11/17 14:07:02 cape_ycsb-d_c15_L10_N2047_rmax4 round 4000/20000 elapsed 48s
+2026/11/17 14:07:14 cape_ycsb-d_c15_L10_N2047_rmax4 round 5000/20000 elapsed 1m0s
+2026/11/17 14:07:26 cape_ycsb-d_c15_L10_N2047_rmax4 round 6000/20000 elapsed 1m12s
+2026/11/17 14:07:38 cape_ycsb-d_c15_L10_N2047_rmax4 round 7000/20000 elapsed 1m24s
+2026/11/17 14:07:50 cape_ycsb-d_c15_L10_N2047_rmax4 round 8000/20000 elapsed 1m36s
+2026/11/17 14:08:02 cape_ycsb-d_c15_L10_N2047_rmax4 round 9000/20000 elapsed 1m48s
+2026/11/17 14:08:14 cape_ycsb-d_c15_L10_N2047_rmax4 round 10000/20000 elapsed 2m0s
+2026/11/17 14:08:27 cape_ycsb-d_c15_L10_N2047_rmax4 round 11000/20000 elapsed 2m13s
+2026/11/17 14:08:38 cape_ycsb-d_c15_L10_N2047_rmax4 round 12000/20000 elapsed 2m24s
+2026/11/17 14:08:50 cape_ycsb-d_c15_L10_N2047_rmax4 round 13000/20000 elapsed 2m36s
+2026/11/17 14:09:02 cape_ycsb-d_c15_L10_N2047_rmax4 round 14000/20000 elapsed 2m48s
+2026/11/17 14:09:15 cape_ycsb-d_c15_L10_N2047_rmax4 round 15000/20000 elapsed 3m1s
+2026/11/17 14:09:27 cape_ycsb-d_c15_L10_N2047_rmax4 round 16000/20000 elapsed 3m13s
+2026/11/17 14:09:39 cape_ycsb-d_c15_L10_N2047_rmax4 round 17000/20000 elapsed 3m25s
+2026/11/17 14:09:51 cape_ycsb-d_c15_L10_N2047_rmax4 round 18000/20000 elapsed 3m37s
+2026/11/17 14:10:03 cape_ycsb-d_c15_L10_N2047_rmax4 round 19000/20000 elapsed 3m49s
+2026/11/17 14:10:14 cape_ycsb-d_c15_L10_N2047_rmax4 round 20000/20000 elapsed 4m0s
+2026/11/17 14:10:14 PAIR cape_ycsb-d_c15_L10_N2047_rmax4 empirical_tv_lca=0.0388 same_addr_pairs=40781 diff_addr_pairs=1919149
+2026/11/17 14:10:14 COST cape_ycsb-d_c15_L10_N2047_rmax4 tv_K=0.0215 stash_blocks_per_real=707.9 path_blocks_per_real=128.8 evict_blocks_per_real=91.2 log_entries_per_real=829.3 total_blocks_per_real=927.9 timesteps_per_real=1
+2026/11/17 14:10:14 SUMMARY cape_ycsb-d_c15_L10_N2047_rmax4 tv_lca_uniform=0.9030 tv_lca_workload=0.4945 tv_leaf_uniform=0.7602 tv_leaf_workload=0.3075 snapshots=10
+2026/11/17 14:10:14 done cape_ycsb-d_c15_L10_N2047_rmax4 in 4m0s
