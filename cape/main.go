@@ -41,6 +41,11 @@ func main() {
 	writePrim := flag.Bool("writeprimary", false, "experiment: writes use only the primary copy's path")
 	coord := flag.Bool("coord", false, "experiment: PRF-coordinated leaf choice (clients pick distinct leaves among candidates)")
 	distinct := flag.Bool("distinct", false, "reference workload: no repeated address within a batch")
+	workload := flag.String("workload", "", "ycsb-a | ycsb-b | ycsb-c | ycsb-d | ycsb-f | uniform | hotspot (overrides -alpha/-read)")
+	score := flag.String("score", "recency", "replica source priority: recency | random | freq")
+	place := flag.String("place", "root", "replica slot order: root | leaf | random")
+	halfLife := flag.Float64("halflife", 2000, "freq estimator half-life in accesses")
+	radapt := flag.Bool("radapt", false, "per-address replica cap = ceil(2·c·p̂), at most rmax")
 	outDir := flag.String("out", "results", "output directory")
 	flag.Parse()
 
@@ -65,6 +70,25 @@ func main() {
 	}
 	cfg.Sigma = *sigma
 	cfg.WritePrimary, cfg.Coord = *writePrim, *coord
+	cfg.HalfLife, cfg.RAdapt, cfg.Clients = *halfLife, *radapt, *clients
+	switch *score {
+	case "recency":
+	case "random":
+		cfg.Score = ScoreRandom
+	case "freq":
+		cfg.Score = ScoreFreq
+	default:
+		log.Fatalf("unknown score %q", *score)
+	}
+	switch *place {
+	case "root":
+	case "leaf":
+		cfg.Place = PlaceLeaf
+	case "random":
+		cfg.Place = PlaceRandom
+	default:
+		log.Fatalf("unknown place %q", *place)
+	}
 	cfg.EvictCold = *evictCold
 	if *official {
 		cfg.ReorderOfficial, cfg.EmptyStart, cfg.FixedEvictOrder = true, true, true
@@ -75,10 +99,28 @@ func main() {
 
 	rng := rand.New(rand.NewSource(*seed))
 	wl := NewWorkload(cfg.N, *alpha, *readRatio, rng)
+	if *workload != "" {
+		var err error
+		if wl, err = NewYCSB(*workload, cfg.N, rng); err != nil {
+			log.Fatal(err)
+		}
+	}
 	wl.Distinct = *distinct
 	sim := NewSim(cfg, *clients, wl, *seed)
 
 	tag := fmt.Sprintf("%s_r%03d_a%.1f_c%d_L%d_N%d", *scheme, int(*readRatio*100+0.5), *alpha, *clients, *L, cfg.N)
+	if *workload != "" {
+		tag = fmt.Sprintf("%s_%s_c%d_L%d_N%d", *scheme, *workload, *clients, *L, cfg.N)
+	}
+	if cfg.Replicas != ReplicaNone && *score != "recency" {
+		tag += "_" + *score
+	}
+	if cfg.Replicas != ReplicaNone && *place != "root" {
+		tag += "_place" + *place
+	}
+	if cfg.RAdapt {
+		tag += "_radapt"
+	}
 	if cfg.Replicas != ReplicaNone {
 		tag += fmt.Sprintf("_rmax%d", *rmax)
 	}
@@ -157,7 +199,7 @@ func main() {
 			win = RoundStats{}
 		}
 		if r%(*secEvery*(cfg.Sigma+1)) == 0 && r > warmRounds {
-			snap := sim.Security(wl.Weights)
+			snap := sim.Security(wl.CurrentWeights())
 			var nostash, kvals []int
 			k1, k2, k3, kn := 0, 0, 0, 0
 			ksum := 0

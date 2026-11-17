@@ -7,6 +7,7 @@ package main
 // 処理は Algorithm 1 / 3 と一致する。
 
 import (
+	"math"
 	"math/rand"
 	"sort"
 )
@@ -19,6 +20,24 @@ const (
 	ReplicaHot                      // 最近アクセスされた (ts.a が大きい) アドレスから複製
 	ReplicaShallow                  // 空きスロットが浅いときだけ、候補リーフ数が最少のアドレスを複製
 	ReplicaStashHot                 // スタッシュにいる(=今のパス上にいない)ブロックだけを、a が大きい順に複製
+)
+
+// 複製元の優先順位 (Hot / StashHot 用)
+type RepScore int
+
+const (
+	ScoreRecency RepScore = iota // 最後のアクセスが新しい順 (ts.a)
+	ScoreRandom                  // 対照: ランダム
+	ScoreFreq                    // ログから数えた減衰付きアクセス頻度
+)
+
+// レプリカを置く空きスロットの順番
+type RepPlace int
+
+const (
+	PlaceRoot   RepPlace = iota // root 側から
+	PlaceLeaf                   // リーフ側から
+	PlaceRandom                 // ランダム
 )
 
 type LeafRule int
@@ -48,6 +67,13 @@ type Config struct {
 	// 各クライアントは候補リーフ集合のうち「自分の順位番目に優先度が小さいリーフ」を選ぶ。
 	// 同じブロックに同時アクセスした2人は必ず別のリーフ (候補が足りる限り) を選ぶ。周辺分布は候補上の一様のまま。
 	Coord bool
+	// 複製の工夫
+	Score    RepScore
+	Place    RepPlace
+	HalfLife float64 // ScoreFreq の半減期 (アクセス数)
+	// RAdapt: アドレスごとのレプリカ上限を推定同時アクセス数 c·p̂ に合わせる (ScoreFreq の推定を使う)
+	RAdapt  bool
+	Clients int
 }
 
 type pmEntry struct {
@@ -64,6 +90,33 @@ type Client struct {
 	seq  int
 	next int // レプリカ ID 採番
 	Last AccessTrace
+	// 頻度推定: ログに現れたアクセス (ts.a の更新) を数える。全クライアントがログを読むので誰でも計算できる。
+	lastA []int
+	fval  []float64
+	ftime []int
+}
+
+func (c *Client) observeAccesses(diff []LogEntry) {
+	if c.lastA == nil {
+		c.lastA = make([]int, c.cfg.N)
+		c.fval = make([]float64, c.cfg.N)
+		c.ftime = make([]int, c.cfg.N)
+	}
+	for _, e := range diff {
+		if e.Copy == 0 && e.TS.A > c.lastA[e.Addr] {
+			c.lastA[e.Addr] = e.TS.A
+			c.fval[e.Addr] = c.freq(e.Addr, e.TS.A) + 1
+			c.ftime[e.Addr] = e.TS.A
+		}
+	}
+}
+
+// freq は時刻 now での減衰付きアクセス回数。
+func (c *Client) freq(a, now int) float64 {
+	if c.fval == nil || c.fval[a] == 0 {
+		return 0
+	}
+	return c.fval[a] * math.Exp2(-float64(now-c.ftime[a])/c.cfg.HalfLife)
 }
 
 func NewClient(id int, cfg *Config, initPM []pmEntry, seed int64) *Client {
@@ -76,6 +129,9 @@ func NewClient(id int, cfg *Config, initPM []pmEntry, seed int64) *Client {
 // Consolidate (Algorithm 3, L1-7) を差分で適用する。レプリカは (addr, copy) ごとに最大 ts を残し、
 // 本体より古い版 (V が小さい) や削除済みのものは捨てる。
 func (c *Client) Consolidate(diff []LogEntry) {
+	if c.cfg.Score == ScoreFreq || c.cfg.RAdapt {
+		c.observeAccesses(diff)
+	}
 	consolidateInto(c.prim, c.reps, diff)
 }
 
@@ -704,7 +760,29 @@ func (c *Client) placeReplicas(P map[int]*Block, S []Block, repsOnPath []placedR
 	}
 	sort.Ints(addrs)
 
-	for _, sl := range pathSlots { // root 側の空きから
+	order := append([]int(nil), pathSlots...) // root 側の空きから
+	switch c.cfg.Place {
+	case PlaceLeaf:
+		for i, j := 0, len(order)-1; i < j; i, j = i+1, j-1 {
+			order[i], order[j] = order[j], order[i]
+		}
+	case PlaceRandom:
+		c.rng.Shuffle(len(order), func(i, j int) { order[i], order[j] = order[j], order[i] })
+	}
+	capOf := func(a int) int { return c.cfg.RMax }
+	if c.cfg.RAdapt {
+		// 1タイムステップで同じブロックに来る人数の推定 c·p̂ (p̂ = 頻度 × ln2 / 半減期)。その2倍まで、切り上げ。
+		capOf = func(a int) int {
+			p := c.freq(a, seq) * math.Ln2 / c.cfg.HalfLife
+			k := int(math.Ceil(2 * float64(c.cfg.Clients) * p))
+			return min(k, c.cfg.RMax)
+		}
+	}
+	randScore := map[int]int{}
+	for _, a := range addrs {
+		randScore[a] = c.rng.Int()
+	}
+	for _, sl := range order {
 		if P[sl] != nil {
 			continue
 		}
@@ -712,9 +790,9 @@ func (c *Client) placeReplicas(P map[int]*Block, S []Block, repsOnPath []placedR
 		if c.cfg.Replicas == ReplicaShallow && depth > c.cfg.MinDepth {
 			break
 		}
-		best, bestScore := -1, 0
+		best, bestScore := -1, 0.0
 		for _, a := range addrs {
-			if nRep[a] >= c.cfg.RMax {
+			if nRep[a] >= capOf(a) {
 				continue
 			}
 			base := live[a]
@@ -727,12 +805,19 @@ func (c *Client) placeReplicas(P map[int]*Block, S []Block, repsOnPath []placedR
 			if gain <= 0 {
 				continue // 候補リーフが増えない場所 (既存コピーの部分木の内側) には置かない
 			}
-			var score int
+			var score float64
 			switch c.cfg.Replicas {
 			case ReplicaHot, ReplicaStashHot:
-				score = src[a].TS.A
+				switch c.cfg.Score {
+				case ScoreRandom:
+					score = float64(randScore[a])
+				case ScoreFreq:
+					score = c.freq(a, seq)
+				default:
+					score = float64(src[a].TS.A)
+				}
 			default: // Fewest / Shallow: 候補リーフが少ないものを優先
-				score = -cur
+				score = -float64(cur)
 			}
 			if best < 0 || score > bestScore {
 				best, bestScore = a, score

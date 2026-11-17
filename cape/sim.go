@@ -8,46 +8,7 @@ import (
 	"fmt"
 	"math"
 	"math/rand"
-	"sort"
 )
-
-type Workload struct {
-	N         int
-	ReadRatio float64
-	Distinct  bool      // 1バッチ内で同じアドレスを選ばない (K 分布の参照用ワークロード)
-	Weights   []float64 // アドレスごとのアクセス確率
-	cdf       []float64
-}
-
-// NewZipf: rank r の確率 ∝ r^-alpha。rank とアドレスの対応はランダムな置換。
-// alpha = 0 なら一様。
-func NewWorkload(N int, alpha float64, readRatio float64, rng *rand.Rand) *Workload {
-	w := make([]float64, N)
-	perm := rng.Perm(N)
-	sum := 0.0
-	for r := 0; r < N; r++ {
-		p := math.Pow(float64(r+1), -alpha)
-		w[perm[r]] = p
-		sum += p
-	}
-	cdf := make([]float64, N)
-	acc := 0.0
-	for i := range w {
-		w[i] /= sum
-		acc += w[i]
-		cdf[i] = acc
-	}
-	return &Workload{N: N, ReadRatio: readRatio, Weights: w, cdf: cdf}
-}
-
-func (wl *Workload) Next(rng *rand.Rand) (addr int, write bool) {
-	u := rng.Float64()
-	addr = sort.SearchFloat64s(wl.cdf, u)
-	if addr >= wl.N {
-		addr = wl.N - 1
-	}
-	return addr, rng.Float64() >= wl.ReadRatio
-}
 
 type Sim struct {
 	cfg      *Config
@@ -145,9 +106,10 @@ func (s *Sim) Round() RoundStats {
 		s.batchTau = make([]int, c)
 		count := map[int]int{}
 		for _, i := range s.rng.Perm(c) {
-			addr, write := s.wl.Next(s.rng)
-			for s.wl.Distinct && count[addr] > 0 {
-				addr, write = s.wl.Next(s.rng)
+			addr, write := s.wl.NextFor(i, s.rng)
+			for s.wl.Distinct && count[addr] > 0 && !s.wl.pendingRMW(i) {
+				s.wl.undo(i)
+				addr, write = s.wl.NextFor(i, s.rng)
 			}
 			s.batchOps[i] = Op{Write: write, Addr: addr}
 			s.batchTau[i] = count[addr] % (sigma + 1) // σ+1 人を超えたら同じタイムステップを共有する
