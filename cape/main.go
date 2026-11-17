@@ -11,6 +11,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"math"
 	"math/rand"
 	"os"
 	"path/filepath"
@@ -37,6 +38,9 @@ func main() {
 	sigma := flag.Int("sigma", 0, "Strong MVP-ORAM: dummy accesses per real access")
 	official := flag.Bool("official", false, "match the public Java implementation: empty start, a-ascending in-place reorder, fixed evict order")
 	evictCold := flag.Bool("evictcold", false, "tweak: evict least recently accessed stash blocks first")
+	writePrim := flag.Bool("writeprimary", false, "experiment: writes use only the primary copy's path")
+	coord := flag.Bool("coord", false, "experiment: PRF-coordinated leaf choice (clients pick distinct leaves among candidates)")
+	distinct := flag.Bool("distinct", false, "reference workload: no repeated address within a batch")
 	outDir := flag.String("out", "results", "output directory")
 	flag.Parse()
 
@@ -60,6 +64,7 @@ func main() {
 		log.Fatalf("unknown scheme %q", *scheme)
 	}
 	cfg.Sigma = *sigma
+	cfg.WritePrimary, cfg.Coord = *writePrim, *coord
 	cfg.EvictCold = *evictCold
 	if *official {
 		cfg.ReorderOfficial, cfg.EmptyStart, cfg.FixedEvictOrder = true, true, true
@@ -70,6 +75,7 @@ func main() {
 
 	rng := rand.New(rand.NewSource(*seed))
 	wl := NewWorkload(cfg.N, *alpha, *readRatio, rng)
+	wl.Distinct = *distinct
 	sim := NewSim(cfg, *clients, wl, *seed)
 
 	tag := fmt.Sprintf("%s_r%03d_a%.1f_c%d_L%d_N%d", *scheme, int(*readRatio*100+0.5), *alpha, *clients, *L, cfg.N)
@@ -87,6 +93,15 @@ func main() {
 	}
 	if *official {
 		tag += "_official"
+	}
+	if cfg.WritePrimary {
+		tag += "_writeprim"
+	}
+	if cfg.Coord {
+		tag += "_coord"
+	}
+	if *distinct {
+		tag += "_distinct"
 	}
 	if err := os.MkdirAll(*outDir, 0o755); err != nil {
 		log.Fatal(err)
@@ -120,6 +135,7 @@ func main() {
 		win.Add(rs)
 		if r == warmRounds {
 			sim.KHist = nil
+			sim.PairHist = [2][]int{}
 		}
 		if r > warmRounds {
 			bwTot.Add(rs)
@@ -207,7 +223,20 @@ func main() {
 	for _, kv := range sortedKeys(kHist) {
 		dist.row("k_nonnested", kv, kHist[kv])
 	}
+	for k, v := range sim.KHist {
+		dist.row("K_distinct_leaves", k, v)
+	}
 	dist.close()
+	pairTV, n1, n0 := 0.0, 0, 0
+	for d := 0; d <= cfg.L && sim.PairHist[0] != nil; d++ {
+		n1 += sim.PairHist[0][d]
+		n0 += sim.PairHist[1][d]
+	}
+	for d := 0; d <= cfg.L && n1 > 0 && n0 > 0; d++ {
+		pairTV += math.Abs(float64(sim.PairHist[0][d])/float64(n1) - float64(sim.PairHist[1][d])/float64(n0))
+	}
+	pairTV /= 2
+	log.Printf("PAIR %s empirical_tv_lca=%.4f same_addr_pairs=%d diff_addr_pairs=%d", tag, pairTV, n1, n0)
 	tvK := KDistanceTV(sim.KHist, IdealKDist(cfg.L, *clients))
 	a := float64(max(bwTot.Accesses, 1))
 	log.Printf("COST %s tv_K=%.4f stash_blocks_per_real=%.1f path_blocks_per_real=%.1f evict_blocks_per_real=%.1f log_entries_per_real=%.1f total_blocks_per_real=%.1f timesteps_per_real=%d",

@@ -42,6 +42,12 @@ type Config struct {
 	ReorderOfficial bool // a 昇順で root 側から、埋まっているスロットだけ並べ替え
 	EmptyStart      bool // ORAM を空で開始 (書き込みで初めてブロックが生まれる)
 	FixedEvictOrder bool // evict の順番を 0..c-1 に固定
+	// 実験: 書き込みは本体のパスだけを使う (読み込みはレプリカも使う)
+	WritePrimary bool
+	// 実験: クライアント間で鍵を共有し、PRF でタイムステップごとのリーフ優先度とクライアント順位を決める。
+	// 各クライアントは候補リーフ集合のうち「自分の順位番目に優先度が小さいリーフ」を選ぶ。
+	// 同じブロックに同時アクセスした2人は必ず別のリーフ (候補が足りる限り) を選ぶ。周辺分布は候補上の一様のまま。
+	Coord bool
 }
 
 type pmEntry struct {
@@ -177,11 +183,14 @@ func intervalsSize(iv []interval) int {
 
 // chooseLeaf は Algorithm 1 L4-5 (「sl を通るランダムなパス」) をコピーへ拡張したもの。
 // 戻り値: leaf と、そのパス上でアクセスに使うコピーの位置 (本体なら Copy=0)。
-func (c *Client) chooseLeaf(addr int) (leaf int, viaCopy int, viaLoc int) {
+func (c *Client) chooseLeaf(addr int, op Op) (leaf int, viaCopy int, viaLoc int) {
 	L, Z := c.cfg.L, c.cfg.Z
 	type cp struct{ id, loc int }
 	copies := []cp{{0, c.prim[addr].Loc}}
 	for id, r := range c.reps[addr] {
+		if c.cfg.WritePrimary && op.Write {
+			break
+		}
 		if r.Loc >= 0 && r.TS.V == c.prim[addr].TS.V {
 			copies = append(copies, cp{id, r.Loc})
 		}
@@ -194,8 +203,14 @@ func (c *Client) chooseLeaf(addr int) (leaf int, viaCopy int, viaLoc int) {
 		lo, hi := leafRange(L, slotNode(Z, loc))
 		return leaf >= lo && leaf < hi
 	}
-	switch c.cfg.LeafRule {
-	case LeafCopyUniform:
+	switch {
+	case c.cfg.Coord:
+		locs := make([]int, len(copies))
+		for i, k := range copies {
+			locs[i] = k.loc
+		}
+		leaf = coordPick(unionLeaves(L, Z, locs), op.Prio, op.Rank)
+	case c.cfg.LeafRule == LeafCopyUniform:
 		k := copies[c.rng.Intn(len(copies))]
 		if k.loc < 0 {
 			leaf = c.rng.Intn(1 << L)
@@ -234,6 +249,26 @@ type Op struct {
 	Addr  int
 	Data  int
 	Dummy bool // Strong MVP-ORAM のダミーアクセス (ランダムなリーフを読んで退避だけ行う)
+	// Coord 用: PRF(鍵, タイムステップ) から全クライアントが同じ値を計算できるという想定をシミュレータで再現する
+	Rank int      // このタイムステップでのクライアントの順位 (クライアントIDの擬似ランダム置換)
+	Prio []uint64 // このタイムステップでの各リーフの優先度
+}
+
+// coordPick: 区間集合 iv の中で rank 番目 (0始まり, |iv| で剰余) に優先度が小さいリーフ。
+func coordPick(iv []interval, prio []uint64, rank int) int {
+	type lp struct {
+		p    uint64
+		leaf int
+	}
+	var xs []lp
+	for _, x := range iv {
+		for l := x.lo; l < x.hi; l++ {
+			xs = append(xs, lp{prio[l], l})
+		}
+	}
+	r := rank % len(xs)
+	sort.Slice(xs, func(i, j int) bool { return xs[i].p < xs[j].p })
+	return xs[r].leaf
 }
 
 // AccessTrace はスタッシュの増減とレプリカの動きを記録する。
@@ -259,10 +294,13 @@ func (c *Client) Prepare(seq int, diff []LogEntry, op Op) (leaf int) {
 	c.Last = AccessTrace{}
 	if op.Dummy {
 		leaf = c.rng.Intn(1 << c.cfg.L)
+		if c.cfg.Coord {
+			leaf = coordPick([]interval{{0, 1 << c.cfg.L}}, op.Prio, op.Rank)
+		}
 		c.Last.Leaf = leaf
 		return leaf
 	}
-	leaf, via, _ := c.chooseLeaf(op.Addr)
+	leaf, via, _ := c.chooseLeaf(op.Addr, op)
 	c.Last.Leaf, c.Last.ViaCopy = leaf, via
 	return leaf
 }

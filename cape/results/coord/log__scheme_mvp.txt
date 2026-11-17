@@ -1,0 +1,24 @@
+2026/11/17 13:34:48 mvp_r050_a1.0_c15_L10_N2047 round 1000/20000 elapsed 1s
+2026/11/17 13:34:50 mvp_r050_a1.0_c15_L10_N2047 round 2000/20000 elapsed 2s
+2026/11/17 13:34:51 mvp_r050_a1.0_c15_L10_N2047 round 3000/20000 elapsed 3s
+2026/11/17 13:34:52 mvp_r050_a1.0_c15_L10_N2047 round 4000/20000 elapsed 4s
+2026/11/17 13:34:53 mvp_r050_a1.0_c15_L10_N2047 round 5000/20000 elapsed 6s
+2026/11/17 13:34:54 mvp_r050_a1.0_c15_L10_N2047 round 6000/20000 elapsed 7s
+2026/11/17 13:34:55 mvp_r050_a1.0_c15_L10_N2047 round 7000/20000 elapsed 8s
+2026/11/17 13:34:56 mvp_r050_a1.0_c15_L10_N2047 round 8000/20000 elapsed 9s
+2026/11/17 13:34:57 mvp_r050_a1.0_c15_L10_N2047 round 9000/20000 elapsed 10s
+2026/11/17 13:34:58 mvp_r050_a1.0_c15_L10_N2047 round 10000/20000 elapsed 11s
+2026/11/17 13:35:00 mvp_r050_a1.0_c15_L10_N2047 round 11000/20000 elapsed 12s
+2026/11/17 13:35:01 mvp_r050_a1.0_c15_L10_N2047 round 12000/20000 elapsed 13s
+2026/11/17 13:35:02 mvp_r050_a1.0_c15_L10_N2047 round 13000/20000 elapsed 14s
+2026/11/17 13:35:03 mvp_r050_a1.0_c15_L10_N2047 round 14000/20000 elapsed 16s
+2026/11/17 13:35:04 mvp_r050_a1.0_c15_L10_N2047 round 15000/20000 elapsed 17s
+2026/11/17 13:35:05 mvp_r050_a1.0_c15_L10_N2047 round 16000/20000 elapsed 18s
+2026/11/17 13:35:06 mvp_r050_a1.0_c15_L10_N2047 round 17000/20000 elapsed 19s
+2026/11/17 13:35:07 mvp_r050_a1.0_c15_L10_N2047 round 18000/20000 elapsed 20s
+2026/11/17 13:35:08 mvp_r050_a1.0_c15_L10_N2047 round 19000/20000 elapsed 21s
+2026/11/17 13:35:09 mvp_r050_a1.0_c15_L10_N2047 round 20000/20000 elapsed 22s
+2026/11/17 13:35:09 PAIR mvp_r050_a1.0_c15_L10_N2047 empirical_tv_lca=0.0648 same_addr_pairs=48589 diff_addr_pairs=1911341
+2026/11/17 13:35:09 COST mvp_r050_a1.0_c15_L10_N2047 tv_K=0.0588 stash_blocks_per_real=681.6 path_blocks_per_real=78.0 evict_blocks_per_real=89.4 log_entries_per_real=384.3 total_blocks_per_real=849.1 timesteps_per_real=1
+2026/11/17 13:35:09 SUMMARY mvp_r050_a1.0_c15_L10_N2047 tv_lca_uniform=0.9578 tv_lca_workload=0.5796 tv_leaf_uniform=0.8286 tv_leaf_workload=0.3895 snapshots=19
+2026/11/17 13:35:09 done mvp_r050_a1.0_c15_L10_N2047 in 22s

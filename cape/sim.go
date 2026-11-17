@@ -14,6 +14,7 @@ import (
 type Workload struct {
 	N         int
 	ReadRatio float64
+	Distinct  bool      // 1バッチ内で同じアドレスを選ばない (K 分布の参照用ワークロード)
 	Weights   []float64 // アドレスごとのアクセス確率
 	cdf       []float64
 }
@@ -62,6 +63,9 @@ type Sim struct {
 	batchTau []int
 	// 論文の指標: 1 タイムステップ内で要求された異なるリーフ数 K の分布
 	KHist []int
+	// 実測の対の識別: 同じタイムステップの実アクセス2つの共通祖先の深さ。
+	// [0]=同じアドレス (H1), [1]=別アドレス (H0)。モデルに依存しない (どの選択規則でも有効)。
+	PairHist [2][]int
 }
 
 const observerID = -1
@@ -142,17 +146,32 @@ func (s *Sim) Round() RoundStats {
 		count := map[int]int{}
 		for _, i := range s.rng.Perm(c) {
 			addr, write := s.wl.Next(s.rng)
+			for s.wl.Distinct && count[addr] > 0 {
+				addr, write = s.wl.Next(s.rng)
+			}
 			s.batchOps[i] = Op{Write: write, Addr: addr}
 			s.batchTau[i] = count[addr] % (sigma + 1) // σ+1 人を超えたら同じタイムステップを共有する
 			count[addr]++
 		}
 	}
 	leaves := map[int]bool{}
+	var prio []uint64
+	var rank []int
+	if s.cfg.Coord {
+		prio = make([]uint64, 1<<s.cfg.L)
+		for i := range prio {
+			prio[i] = s.rng.Uint64()
+		}
+		rank = s.rng.Perm(c)
+	}
 	for i, cl := range s.clients {
 		if step == s.batchTau[i] {
 			ops[i] = s.batchOps[i]
 		} else {
 			ops[i] = Op{Dummy: true}
+		}
+		if s.cfg.Coord {
+			ops[i].Prio, ops[i].Rank = prio, rank[i]
 		}
 		seq, diff := s.srv.GetPM(cl.ID)
 		ops[i].Data = seq
@@ -166,6 +185,28 @@ func (s *Sim) Round() RoundStats {
 		s.KHist = make([]int, c+1)
 	}
 	s.KHist[len(leaves)]++
+	if s.PairHist[0] == nil {
+		s.PairHist = [2][]int{make([]int, s.cfg.L+1), make([]int, s.cfg.L+1)}
+	}
+	for i := 0; i < c; i++ {
+		for j := i + 1; j < c; j++ {
+			if ops[i].Dummy || ops[j].Dummy {
+				continue
+			}
+			li, lj := s.clients[i].Last.Leaf, s.clients[j].Last.Leaf
+			d := s.cfg.L
+			for li != lj {
+				li >>= 1
+				lj >>= 1
+				d--
+			}
+			h := 1
+			if ops[i].Addr == ops[j].Addr {
+				h = 0
+			}
+			s.PairHist[h][d]++
+		}
+	}
 	type out struct {
 		ml    []LogEntry
 		path  map[int]*Block

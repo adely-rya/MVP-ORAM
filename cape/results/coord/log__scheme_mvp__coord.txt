@@ -1,0 +1,24 @@
+2026/11/17 13:34:49 mvp_r050_a1.0_c15_L10_N2047_coord round 1000/20000 elapsed 2s
+2026/11/17 13:34:51 mvp_r050_a1.0_c15_L10_N2047_coord round 2000/20000 elapsed 4s
+2026/11/17 13:34:53 mvp_r050_a1.0_c15_L10_N2047_coord round 3000/20000 elapsed 6s
+2026/11/17 13:34:55 mvp_r050_a1.0_c15_L10_N2047_coord round 4000/20000 elapsed 7s
+2026/11/17 13:34:57 mvp_r050_a1.0_c15_L10_N2047_coord round 5000/20000 elapsed 9s
+2026/11/17 13:34:58 mvp_r050_a1.0_c15_L10_N2047_coord round 6000/20000 elapsed 11s
+2026/11/17 13:35:00 mvp_r050_a1.0_c15_L10_N2047_coord round 7000/20000 elapsed 13s
+2026/11/17 13:35:02 mvp_r050_a1.0_c15_L10_N2047_coord round 8000/20000 elapsed 15s
+2026/11/17 13:35:04 mvp_r050_a1.0_c15_L10_N2047_coord round 9000/20000 elapsed 17s
+2026/11/17 13:35:06 mvp_r050_a1.0_c15_L10_N2047_coord round 10000/20000 elapsed 18s
+2026/11/17 13:35:08 mvp_r050_a1.0_c15_L10_N2047_coord round 11000/20000 elapsed 20s
+2026/11/17 13:35:10 mvp_r050_a1.0_c15_L10_N2047_coord round 12000/20000 elapsed 22s
+2026/11/17 13:35:12 mvp_r050_a1.0_c15_L10_N2047_coord round 13000/20000 elapsed 24s
+2026/11/17 13:35:13 mvp_r050_a1.0_c15_L10_N2047_coord round 14000/20000 elapsed 26s
+2026/11/17 13:35:15 mvp_r050_a1.0_c15_L10_N2047_coord round 15000/20000 elapsed 28s
+2026/11/17 13:35:17 mvp_r050_a1.0_c15_L10_N2047_coord round 16000/20000 elapsed 30s
+2026/11/17 13:35:19 mvp_r050_a1.0_c15_L10_N2047_coord round 17000/20000 elapsed 31s
+2026/11/17 13:35:20 mvp_r050_a1.0_c15_L10_N2047_coord round 18000/20000 elapsed 33s
+2026/11/17 13:35:22 mvp_r050_a1.0_c15_L10_N2047_coord round 19000/20000 elapsed 34s
+2026/11/17 13:35:23 mvp_r050_a1.0_c15_L10_N2047_coord round 20000/20000 elapsed 36s
+2026/11/17 13:35:23 PAIR mvp_r050_a1.0_c15_L10_N2047_coord empirical_tv_lca=0.0643 same_addr_pairs=47682 diff_addr_pairs=1912248
+2026/11/17 13:35:23 COST mvp_r050_a1.0_c15_L10_N2047_coord tv_K=0.0762 stash_blocks_per_real=680.6 path_blocks_per_real=78.2 evict_blocks_per_real=89.4 log_entries_per_real=384.2 total_blocks_per_real=848.2 timesteps_per_real=1
+2026/11/17 13:35:23 SUMMARY mvp_r050_a1.0_c15_L10_N2047_coord tv_lca_uniform=0.9585 tv_lca_workload=0.5748 tv_leaf_uniform=0.8306 tv_leaf_workload=0.3910 snapshots=19
+2026/11/17 13:35:23 done mvp_r050_a1.0_c15_L10_N2047_coord in 36s
